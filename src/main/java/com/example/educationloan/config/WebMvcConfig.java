@@ -21,16 +21,30 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(requestLoggingInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(requestLoggingInterceptor).addPathPatterns("/**")
+                .excludePathPatterns(
+                        "/favicon.ico", "/css/**", "/js/**",
+                        "/fonts/**", "/images/**", "/Report-API.html"
+                );
 
-        registry.addInterceptor(rateLimitingTokenBucketInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(rateLimitingTokenBucketInterceptor).addPathPatterns("/api/**")
+                .excludePathPatterns(
+                        "/api/v1/auth/login",
+                        "/api/v1/auth/register",
+                        "/api/v1/auth/refresh"
+                );
 
         registry.addInterceptor(tokenExpiryInterceptor).addPathPatterns("/api/**")
                 .excludePathPatterns("/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh");
 
-        registry.addInterceptor(auditLoggingInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(auditLoggingInterceptor) .addPathPatterns("/api/**")
+                .excludePathPatterns(
+                        "/favicon.ico", "/css/**", "/js/**",
+                        "/fonts/**", "/images/**"
+                );
 
        // registry.addInterceptor(fixedWindowRateLimiter).addPathPatterns("/**").excludePathPatterns("/actuator/health", "/actuator/info", "/favicon.ico", "/error");
+
 
 
     }

@@ -1,0 +1,21 @@
+2026-03-11 18:45:18 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/users/get/2 | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:45:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/get/2 | Status: 200
+2026-03-11 18:45:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/get/2 | Time: 393ms | Status: 200
+2026-03-11 18:46:34 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/users/get/2 | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:46:34 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/get/2 | Status: 200
+2026-03-11 18:46:34 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/get/2 | Time: 211ms | Status: 200
+2026-03-11 18:46:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/users/get/2 | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:46:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/get/2 | Status: 200
+2026-03-11 18:46:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/get/2 | Time: 16ms | Status: 200
+2026-03-11 18:49:50 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/users/create | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:49:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/create | Status: 201
+2026-03-11 18:49:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/create | Time: 756ms | Status: 201
+2026-03-11 18:51:04 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/users/create | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:51:05 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/create | Status: 201
+2026-03-11 18:51:05 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/create | Time: 424ms | Status: 201
+2026-03-11 18:52:52 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/users/create | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:52:53 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/create | Status: 201
+2026-03-11 18:52:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/create | Time: 1126ms | Status: 201
+2026-03-11 18:54:18 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/users/create | IP: 0:0:0:0:0:0:0:1
+2026-03-11 18:54:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/users/create | Status: 201
+2026-03-11 18:54:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/users/create | Time: 748ms | Status: 201

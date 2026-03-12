@@ -47,4 +47,9 @@ public class UserRoleService implements UserRoleInterface{
         userRole.setAssignedAt(LocalDateTime.now());
         return userRoleRepository.save(userRole);
     }
+
+    @Override
+    public List<UserRole> getAllUserRoles() {
+        return userRoleRepository.findAll();
+    }
 }

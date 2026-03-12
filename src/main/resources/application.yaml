@@ -104,7 +104,17 @@ management:
 #http://localhost:8080/actuator/env
 
 # application.properties
-
+  spring:
+      mvc:
+         favicon:
+               enabled: false
+  logging:
+    level:
+       org:
+       springframework:
+       web:
+       servlet:
+        resource: WARN
 
 server:
   port: 8080

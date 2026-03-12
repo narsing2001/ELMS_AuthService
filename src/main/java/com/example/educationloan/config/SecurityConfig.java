@@ -40,8 +40,21 @@ public class SecurityConfig {
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers("/api/v1/user-roles/**").hasAnyRole("ADMIN", "MANAGER")
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/v1/user-roles/**").permitAll()
+                        .requestMatchers("/reports/**", "/api/v1/reports/**").permitAll()
+                        .requestMatchers("/api/v1/reports/**").permitAll()
+                        .requestMatchers("/LoginRegister.html").permitAll()
+                        .requestMatchers("/report.html").permitAll()
+                        .requestMatchers("/report-preview.html").permitAll()
+                        .requestMatchers("/report-all.html").permitAll()
+                        .requestMatchers(
+                                "/LoginRegister.html",
+                                "/Report-API.html",
+                                "/index.html",
+                                "/favicon.ico",
+                                "/css/**", "/js/**", "/fonts/**",
+                                "/images/**", "/webjars/**"
+                        ).permitAll().anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

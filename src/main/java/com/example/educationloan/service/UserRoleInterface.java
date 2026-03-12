@@ -13,5 +13,5 @@ public interface UserRoleInterface {
     User getUserById(Long id);
     UserRole giveRoleToUser(User user, Role role, String assignedBy);
     void removeUserRole(Long userRoleId);
-
+    List<UserRole> getAllUserRoles();
 }

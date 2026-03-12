@@ -1,7 +1,9 @@
 package com.example.educationloan.dto;
 import com.example.educationloan.entity.User;
 import com.example.educationloan.entity.UserRole;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.Builder;
 import lombok.Data;
 
@@ -20,6 +22,8 @@ public class UserDTO {
     private String lastName;
     private Boolean isActive;
     private Boolean isEmailVerified;
+   // @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Set<RoleDTO> roles;

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Education Loan – Auth</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+          --bg:       #1a1a2e;
+          --surface:  #16213e;
+          --card:     #0f3460;
+          --accent:   #e94560;
+          --accent2:  #0f3460;
+          --text:     #eaeaea;
+          --muted:    rgba(255,255,255,.45);
+          --border:   rgba(255,255,255,.1);
+          --input-bg: rgba(255,255,255,.06);
+          --success:  #2E7D32;
+          --error:    #c62828;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          min-height: 100vh;
+          background: var(--bg);
+          font-family: 'Archivo', sans-serif;
+          color: var(--text);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          overflow-x: hidden;
+        }
+
+        body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(233,69,96,.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(233,69,96,.04) 1px, transparent 1px);
+          background-size: 40px 40px;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        body::after {
+          content: '';
+          position: fixed;
+          top: -30%;
+          left: -10%;
+          width: 60%;
+          height: 80%;
+          background: radial-gradient(ellipse, rgba(233,69,96,.08) 0%, transparent 60%);
+          pointer-events: none;
+          z-index: 0;
+          animation: drift 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes drift {
+          from { transform: translate(0, 0) scale(1); }
+          to   { transform: translate(5%, 8%) scale(1.1); }
+        }
+
+        .wrapper {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          max-width: 460px;
+          animation: fadeUp .5s ease both;
+        }
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .brand { text-align: center; margin-bottom: 32px; }
+        .brand-icon {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 52px; height: 52px; border-radius: 14px;
+          background: linear-gradient(135deg, var(--accent), #c62060);
+          font-size: 24px; margin-bottom: 14px;
+          box-shadow: 0 8px 32px rgba(233,69,96,.35);
+        }
+        .brand-title { font-size: 22px; font-weight: 900; letter-spacing: -.4px; color: #fff; }
+        .brand-sub {
+          font-size: 11px; color: var(--muted); margin-top: 4px;
+          font-family: 'IBM Plex Mono', monospace; letter-spacing: .5px;
+        }
+
+        .card {
+          background: rgba(255,255,255,.04);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          overflow: hidden;
+          backdrop-filter: blur(12px);
+          box-shadow: 0 24px 64px rgba(0,0,0,.5);
+        }
+
+        .tab-bar { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+        .tab-btn {
+          padding: 14px; background: none; border: none; color: var(--muted);
+          font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700;
+          cursor: pointer; transition: all .2s; position: relative; letter-spacing: .3px;
+        }
+        .tab-btn.active { color: #fff; }
+        .tab-btn.active::after {
+          content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+          height: 2px; background: var(--accent);
+        }
+        .tab-btn:hover:not(.active) { color: rgba(255,255,255,.7); background: rgba(255,255,255,.03); }
+
+        .panel { display: none; padding: 28px; }
+        .panel.active { display: block; animation: fadeIn .25s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .field { margin-bottom: 16px; }
+        .field label {
+          display: block; font-size: 11px; font-weight: 700; color: var(--muted);
+          margin-bottom: 6px; letter-spacing: .6px; text-transform: uppercase;
+          font-family: 'IBM Plex Mono', monospace;
+        }
+        .field input {
+          width: 100%; padding: 11px 14px; background: var(--input-bg);
+          border: 1px solid var(--border); border-radius: 7px; color: #fff;
+          font-family: 'Archivo', sans-serif; font-size: 13.5px;
+          transition: border-color .2s, box-shadow .2s; outline: none;
+        }
+        .field input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(233,69,96,.15); }
+        .field input::placeholder { color: rgba(255,255,255,.25); }
+
+        .pw-wrap { position: relative; }
+        .pw-wrap input { padding-right: 42px; }
+        .pw-toggle {
+          position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+          background: none; border: none; cursor: pointer; color: var(--muted);
+          font-size: 16px; padding: 0; line-height: 1; transition: color .2s;
+        }
+        .pw-toggle:hover { color: #fff; }
+
+        .btn-submit {
+          width: 100%; padding: 13px; margin-top: 6px; border: none; border-radius: 8px;
+          background: linear-gradient(135deg, var(--accent), #c62060); color: #fff;
+          font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 800;
+          cursor: pointer; letter-spacing: .3px;
+          transition: opacity .2s, transform .1s, box-shadow .2s;
+          box-shadow: 0 4px 20px rgba(233,69,96,.35);
+        }
+        .btn-submit:hover  { opacity: .92; box-shadow: 0 6px 28px rgba(233,69,96,.5); }
+        .btn-submit:active { transform: scale(.985); }
+        .btn-submit:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+        .alert {
+          padding: 11px 14px; border-radius: 7px; font-size: 12.5px; margin-bottom: 16px;
+          display: none; align-items: flex-start; gap: 8px; line-height: 1.5; animation: fadeIn .2s ease;
+        }
+        .alert.show { display: flex; }
+        .alert-error   { background: rgba(198,40,40,.15); border: 1px solid rgba(198,40,40,.4); color: #ef9a9a; }
+        .alert-success { background: rgba(46,125,50,.15);  border: 1px solid rgba(46,125,50,.4);  color: #a5d6a7; }
+        .alert-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+        .divider { text-align: center; margin: 18px 0 0; font-size: 12px; color: var(--muted); }
+        .divider a { color: var(--accent); text-decoration: none; font-weight: 700; cursor: pointer; }
+        .divider a:hover { text-decoration: underline; }
+
+        .spinner {
+          display: inline-block; width: 14px; height: 14px;
+          border: 2px solid rgba(255,255,255,.3); border-top-color: #fff;
+          border-radius: 50%; animation: spin .7s linear infinite;
+          vertical-align: middle; margin-right: 6px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .success-screen { display: none; text-align: center; padding: 40px 28px; animation: fadeIn .3s ease; }
+        .success-screen.show { display: block; }
+        .success-check { font-size: 48px; margin-bottom: 16px; display: block; }
+        .success-screen h2 { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+        .success-screen p  { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+        .btn-go {
+          display: inline-block; padding: 11px 28px; border-radius: 8px;
+          background: linear-gradient(135deg, var(--accent), #c62060); color: #fff;
+          font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 13px;
+          border: none; cursor: pointer; text-decoration: none;
+          box-shadow: 0 4px 20px rgba(233,69,96,.35); transition: opacity .2s;
+        }
+        .btn-go:hover { opacity: .88; }
+
+        .hint { font-size: 10.5px; color: var(--muted); margin-top: 4px; font-family: 'IBM Plex Mono', monospace; }
+        .hint.err { color: #ef9a9a; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="brand">
+        <div class="brand-icon">🎓</div>
+        <div class="brand-title">Education Loan</div>
+        <div class="brand-sub">AUTH SERVICE · /api/v1/auth</div>
+    </div>
+
+    <div class="card">
+
+        <div class="tab-bar">
+            <button class="tab-btn active" id="tab-login"    onclick="switchTab('login')">Sign In</button>
+            <button class="tab-btn"        id="tab-register" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <!----------LOGIN PANEL -------------->
+        <div class="panel active" id="panel-login">
+            <div class="alert alert-error" id="login-error">
+                <span class="alert-icon">⚠</span><span id="login-error-msg"></span>
+            </div>
+
+            <div class="field">
+                <label>Username or Email</label>
+                <input type="text" id="login-username" placeholder="your_username or email" autocomplete="username"/>
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password"/>
+                    <button class="pw-toggle" onclick="togglePw('login-password', this)" tabindex="-1">👁</button>
+                </div>
+            </div>
+
+            <button class="btn-submit" id="login-btn" onclick="doLogin()">Sign In</button>
+
+            <div class="divider">
+                Don't have an account? <a onclick="switchTab('register')">Register here</a>
+            </div>
+        </div>
+
+        <!--------REGISTER PANEL ------------>
+        <div class="panel" id="panel-register">
+            <div class="alert alert-error" id="reg-error">
+                <span class="alert-icon">⚠</span><span id="reg-error-msg"></span>
+            </div>
+            <div class="alert alert-success" id="reg-success">
+                <span class="alert-icon">✓</span><span id="reg-success-msg"></span>
+            </div>
+
+            <div class="row-2">
+                <div class="field">
+                    <label>First Name</label>
+                    <input type="text" id="reg-firstname" placeholder="John" autocomplete="given-name"/>
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input type="text" id="reg-lastname" placeholder="Doe" autocomplete="family-name"/>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="reg-email" placeholder="john.doe@gmail.com" autocomplete="email"/>
+            </div>
+
+            <div class="field">
+                <label>Username</label>
+                <input type="text" id="reg-username" placeholder="john_doe_42" autocomplete="username"/>
+                <div class="hint">Lowercase letters, numbers and underscores only</div>
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="reg-password" placeholder="Min 8 characters"
+                           autocomplete="new-password" oninput="checkPwStrength(this.value)"/>
+                    <button class="pw-toggle" onclick="togglePw('reg-password', this)" tabindex="-1">👁</button>
+                </div>
+                <div class="hint" id="pw-hint">At least 8 characters</div>
+            </div>
+
+            <div class="field">
+                <label>Confirm Password</label>
+                <div class="pw-wrap">
+                    <input type="password" id="reg-confirm" placeholder="Repeat password" autocomplete="new-password"/>
+                    <button class="pw-toggle" onclick="togglePw('reg-confirm', this)" tabindex="-1">👁</button>
+                </div>
+            </div>
+
+            <button class="btn-submit" id="reg-btn" onclick="doRegister()">Create Account</button>
+
+            <div class="divider">
+                Already have an account? <a onclick="switchTab('login')">Sign in</a>
+            </div>
+        </div>
+
+        <!----------------SUCCESS SCREEN----------------------->
+        <div class="success-screen" id="success-screen">
+            <span class="success-check">🎉</span>
+            <h2>Account Created!</h2>
+            <p id="success-detail">Your account has been registered successfully.<br/>You can now sign in.</p>
+            <button class="btn-go" onclick="switchTab('login')">Go to Sign In →</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+<!-----------configuration----------------------------->
+    const BASE_URL = '';
+
+<!--Change these if your AuthDTO uses different field names-------------------------------------->
+<!--Your API returns: { "success": true, "message": "...", "data": { "accessToken": "...", "refreshToken": "..." } }-->
+<!--payload = data.data  ← this unwraps the ApiResponse wrapper--------------->
+    const TOKEN_FIELD   = 'accessToken';
+    const REFRESH_FIELD = 'refreshToken';
+
+<!-----------------tab switching---------------------------->
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('success-screen').classList.remove('show');
+        document.getElementById('tab-'   + tab).classList.add('active');
+        document.getElementById('panel-' + tab).classList.add('active');
+        clearAlerts();
+    }
+
+    function clearAlerts() {
+        document.querySelectorAll('.alert').forEach(a => a.classList.remove('show'));
+    }
+
+<!------------password toggle----------------->
+    function togglePw(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const isText = input.type === 'text';
+        input.type = isText ? 'password' : 'text';
+        btn.textContent = isText ? '👁' : '🙈';
+    }
+
+<!-----------------password strength---------------------->
+    function checkPwStrength(val) {
+        const hint = document.getElementById('pw-hint');
+        if (!val) { hint.textContent = 'At least 8 characters'; hint.className = 'hint'; return; }
+        if (val.length < 8)  { hint.textContent = 'Too short'; hint.className = 'hint err'; return; }
+        if (val.length < 12) { hint.textContent = 'Good — consider making it longer'; hint.className = 'hint'; return; }
+        hint.textContent = '✓ Strong password'; hint.className = 'hint'; hint.style.color = '#a5d6a7';
+    }
+
+<!----------------alert messages---------------------------->
+    function showError(prefix, msg) {
+        document.getElementById(prefix + '-error-msg').textContent = msg;
+        document.getElementById(prefix + '-error').classList.add('show');
+    }
+    function showSuccess(prefix, msg) {
+        document.getElementById(prefix + '-success-msg').textContent = msg;
+        document.getElementById(prefix + '-success').classList.add('show');
+    }
+
+ button loading
+    function setLoading(btnId, loading, label) {
+        const btn = document.getElementById(btnId);
+        btn.disabled = loading;
+        btn.innerHTML = loading ? `<span class="spinner"></span> Please wait...` : label;
+    }
+
+<!-----------login--------------------->
+    async function doLogin() {
+        clearAlerts();
+        const username = document.getElementById('login-username').value.trim();
+        const password = document.getElementById('login-password').value;
+        if (!username || !password) {
+            showError('login', 'Please enter your username/email and password.');
+            return;
+        }
+        setLoading('login-btn', true, 'Sign In');
+
+        try {
+            const res = await fetch(BASE_URL + '/api/v1/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ usernameOrEmail: username, password: password })
+            });
+
+            const data = await res.json();
+            // Your response shape: { success, message, data: { accessToken, refreshToken, ... } }
+            const payload = (data.data && typeof data.data === 'object') ? data.data : data;
+
+            if (res.ok && payload[TOKEN_FIELD]) {
+                localStorage.setItem('token',        payload[TOKEN_FIELD]);
+                localStorage.setItem('refreshToken', payload[REFRESH_FIELD] || '');
+                localStorage.setItem('username',     payload.username || username);
+                window.location.href = '/index.html';
+            } else {
+                const errMsg = data.message || payload.message || 'Invalid username or password.';
+                showError('login', errMsg);
+            }
+        } catch (err) {
+            showError('login', 'Network error. Is the server running? ' + err.message);
+        } finally {
+            setLoading('login-btn', false, 'Sign In');
+        }
+    }
+
+<!------------------------register-------------------------->
+    async function doRegister() {
+        clearAlerts();
+        const firstName = document.getElementById('reg-firstname').value.trim();
+        const lastName  = document.getElementById('reg-lastname').value.trim();
+        const email     = document.getElementById('reg-email').value.trim();
+        const username  = document.getElementById('reg-username').value.trim();
+        const password  = document.getElementById('reg-password').value;
+        const confirm   = document.getElementById('reg-confirm').value;
+
+        if (!firstName || !lastName || !email || !username || !password) {
+            showError('reg', 'All fields are required.');
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showError('reg', 'Please enter a valid email address.');
+            return;
+        }
+        if (password.length < 8) {
+            showError('reg', 'Password must be at least 8 characters long.');
+            return;
+        }
+        if (password !== confirm) {
+            showError('reg', 'Passwords do not match.');
+            return;
+        }
+        setLoading('reg-btn', true, 'Create Account');
+
+        try {
+            const res = await fetch(BASE_URL + '/api/v1/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ firstName, lastName, email, username, password })
+            });
+
+            const data = await res.json();
+            const payload = (data.data && typeof data.data === 'object') ? data.data : data;
+
+            if (res.ok) {
+                if (payload[TOKEN_FIELD]) {
+                    localStorage.setItem('token',        payload[TOKEN_FIELD]);
+                    localStorage.setItem('refreshToken', payload[REFRESH_FIELD] || '');
+                    localStorage.setItem('username',     payload.username || username);
+                }
+                document.getElementById('panel-register').classList.remove('active');
+                document.getElementById('success-screen').classList.add('show');
+                document.getElementById('success-detail').textContent =
+                    `Welcome, ${firstName}! Your account has been created. You can now sign in.`;
+            } else {
+                const errMsg = data.message || payload.message || 'Registration failed. Please try again.';
+                showError('reg', errMsg);
+            }
+        } catch (err) {
+            showError('reg', 'Network error. Is the server running? ' + err.message);
+        } finally {
+            setLoading('reg-btn', false, 'Create Account');
+        }
+    }
+
+<!--------------------login key------------------------------>
+    document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter') return;
+        if (document.getElementById('panel-login').classList.contains('active'))    doLogin();
+        if (document.getElementById('panel-register').classList.contains('active')) doRegister();
+    });
+
+<!----------------auto redirect if already logged in------------------>
+    (function() {
+        if (localStorage.getItem('token')) {
+            window.location.href = '/index.html';
+        }
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Education Loan – Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+          --bg:        #1a1a2e;
+          --surface:   #16213e;
+          --card:      rgba(255,255,255,.04);
+          --accent:    #e94560;
+          --accent2:   #0f3460;
+          --text:      #eaeaea;
+          --muted:     rgba(255,255,255,.45);
+          --border:    rgba(255,255,255,.08);
+          --pink:      #AD1457;
+          --blue:      #1565C0;
+          --teal:      #00695C;
+          --success:   #2E7D32;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          min-height: 100vh;
+          background: var(--bg);
+          font-family: 'Archivo', sans-serif;
+          color: var(--text);
+          overflow-x: hidden;
+        }
+
+        /* ── Grid background ── */
+        body::before {
+          content: '';
+          position: fixed; inset: 0;
+          background-image:
+            linear-gradient(rgba(233,69,96,.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(233,69,96,.03) 1px, transparent 1px);
+          background-size: 40px 40px;
+          pointer-events: none; z-index: 0;
+        }
+
+        /* ── Ambient glow ── */
+        body::after {
+          content: '';
+          position: fixed; top: -20%; right: -10%;
+          width: 50%; height: 70%;
+          background: radial-gradient(ellipse, rgba(21,101,192,.07) 0%, transparent 60%);
+          pointer-events: none; z-index: 0;
+          animation: glow 15s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+          from { transform: translate(0,0) scale(1); }
+          to   { transform: translate(-5%,5%) scale(1.1); }
+        }
+
+        /* ══════════════════════════════════════════
+           NAVBAR
+        ══════════════════════════════════════════ */
+        .navbar {
+          position: sticky; top: 0; z-index: 100;
+          background: rgba(26,26,46,.85);
+          backdrop-filter: blur(16px);
+          border-bottom: 1px solid var(--border);
+          padding: 0 32px;
+          display: flex; align-items: center; justify-content: space-between;
+          height: 60px;
+        }
+        .nav-brand {
+          display: flex; align-items: center; gap: 10px;
+        }
+        .nav-icon {
+          width: 34px; height: 34px; border-radius: 9px;
+          background: linear-gradient(135deg, var(--accent), #c62060);
+          display: flex; align-items: center; justify-content: center;
+          font-size: 16px;
+          box-shadow: 0 4px 14px rgba(233,69,96,.35);
+        }
+        .nav-title {
+          font-size: 15px; font-weight: 900; letter-spacing: -.3px; color: #fff;
+        }
+        .nav-subtitle {
+          font-size: 10px; color: var(--muted);
+          font-family: 'IBM Plex Mono', monospace; letter-spacing: .5px;
+        }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .nav-user {
+          display: flex; align-items: center; gap: 8px;
+          padding: 6px 12px; border-radius: 20px;
+          background: rgba(255,255,255,.06);
+          border: 1px solid var(--border);
+          font-size: 12px; color: var(--muted);
+        }
+        .nav-user-dot {
+          width: 8px; height: 8px; border-radius: 50%;
+          background: #4caf50;
+          box-shadow: 0 0 6px #4caf50;
+          animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+          0%,100% { opacity: 1; } 50% { opacity: .4; }
+        }
+        .nav-user strong { color: #fff; font-size: 13px; }
+        .btn-logout {
+          padding: 7px 16px; border-radius: 6px;
+          background: rgba(233,69,96,.12); border: 1px solid rgba(233,69,96,.3);
+          color: #e94560; font-family: 'Archivo', sans-serif;
+          font-size: 12px; font-weight: 700; cursor: pointer;
+          transition: all .2s; letter-spacing: .3px;
+        }
+        .btn-logout:hover { background: rgba(233,69,96,.22); border-color: #e94560; }
+
+        /* ══════════════════════════════════════════
+           MAIN LAYOUT
+        ══════════════════════════════════════════ */
+        .main {
+          position: relative; z-index: 1;
+          max-width: 1100px; margin: 0 auto;
+          padding: 40px 32px 60px;
+        }
+
+        /* ── Page header ── */
+        .page-header {
+          margin-bottom: 36px;
+          animation: fadeUp .5s ease both;
+        }
+        .page-header h1 {
+          font-size: 28px; font-weight: 900; letter-spacing: -.5px;
+          color: #fff; margin-bottom: 6px;
+        }
+        .page-header p { font-size: 13px; color: var(--muted); }
+        .greeting-time {
+          font-family: 'IBM Plex Mono', monospace;
+          font-size: 11px; color: var(--accent);
+          margin-bottom: 8px; letter-spacing: .5px;
+        }
+
+        /* ── Stat cards ── */
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+        .stat-card {
+          background: var(--card);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 20px 22px;
+          position: relative; overflow: hidden;
+          animation: fadeUp .5s ease both;
+          transition: transform .2s, box-shadow .2s;
+        }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.3); }
+        .stat-card::before {
+          content: '';
+          position: absolute; top: 0; left: 0; right: 0;
+          height: 2px;
+        }
+        .stat-card.pink::before  { background: linear-gradient(90deg, var(--pink), #c62060); }
+        .stat-card.blue::before  { background: linear-gradient(90deg, var(--blue), #1976D2); }
+        .stat-card.teal::before  { background: linear-gradient(90deg, var(--teal), #00897B); }
+        .stat-card.green::before { background: linear-gradient(90deg, var(--success), #43A047); }
+
+        .stat-icon {
+          font-size: 22px; margin-bottom: 12px;
+          display: inline-block;
+        }
+        .stat-value {
+          font-size: 28px; font-weight: 900;
+          font-family: 'IBM Plex Mono', monospace;
+          color: #fff; line-height: 1;
+          margin-bottom: 4px;
+        }
+        .stat-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
+        .stat-loading { opacity: .4; font-size: 18px; }
+
+        /* ── Section title ── */
+        .section-title {
+          font-size: 11px; font-weight: 700; color: var(--muted);
+          letter-spacing: 1px; text-transform: uppercase;
+          font-family: 'IBM Plex Mono', monospace;
+          margin-bottom: 14px; margin-top: 32px;
+        }
+
+        /* ── Report cards grid ── */
+        .reports-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 16px;
+        }
+        .report-card {
+          background: var(--card);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 24px;
+          cursor: pointer;
+          transition: transform .2s, box-shadow .2s, border-color .2s;
+          animation: fadeUp .5s ease both;
+          position: relative; overflow: hidden;
+        }
+        .report-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(0,0,0,.35);
+        }
+        .report-card.pink:hover  { border-color: rgba(173,20,87,.5); }
+        .report-card.blue:hover  { border-color: rgba(25,118,210,.5); }
+        .report-card.teal:hover  { border-color: rgba(0,137,123,.5); }
+
+        .report-card-stripe {
+          position: absolute; top: 0; left: 0; right: 0; height: 3px;
+          border-radius: 12px 12px 0 0;
+        }
+        .pink  .report-card-stripe { background: linear-gradient(90deg,#880E4F,#AD1457); }
+        .blue  .report-card-stripe { background: linear-gradient(90deg,#1565C0,#1976D2); }
+        .teal  .report-card-stripe { background: linear-gradient(90deg,#00695C,#00897B); }
+
+        .report-card-icon {
+          font-size: 28px; margin-bottom: 14px;
+          display: inline-block;
+        }
+        .report-card h3 { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+        .report-card p  { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+
+        .report-card-meta {
+          display: flex; align-items: center; justify-content: space-between;
+          font-size: 10px; color: var(--muted);
+          font-family: 'IBM Plex Mono', monospace;
+          padding-top: 14px;
+          border-top: 1px solid var(--border);
+        }
+        .btn-open {
+          padding: 7px 16px; border-radius: 6px; border: none;
+          font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700;
+          cursor: pointer; transition: all .2s; letter-spacing: .3px;
+        }
+        .pink  .btn-open { background: rgba(173,20,87,.2);  color: #F48FB1; border: 1px solid rgba(173,20,87,.4); }
+        .blue  .btn-open { background: rgba(25,118,210,.2); color: #90CAF9; border: 1px solid rgba(25,118,210,.4); }
+        .teal  .btn-open { background: rgba(0,137,123,.2);  color: #80CBC4; border: 1px solid rgba(0,137,123,.4); }
+        .pink  .btn-open:hover { background: rgba(173,20,87,.35); }
+        .blue  .btn-open:hover { background: rgba(25,118,210,.35); }
+        .teal  .btn-open:hover { background: rgba(0,137,123,.35); }
+
+        /* ── PDF Download buttons ── */
+        .btn-pdf {
+          padding: 7px 14px; border-radius: 6px; border: none;
+          font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 700;
+          cursor: pointer; transition: all .2s;
+          background: rgba(255,255,255,.06); color: var(--muted);
+          border: 1px solid var(--border);
+        }
+        .btn-pdf:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+        /* ── Quick actions bar ── */
+        .quick-actions {
+          display: flex; gap: 12px; flex-wrap: wrap;
+          margin-top: 32px;
+          padding: 20px 24px;
+          background: var(--card);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          animation: fadeUp .6s ease both;
+        }
+        .quick-title {
+          width: 100%; font-size: 11px; font-weight: 700;
+          color: var(--muted); letter-spacing: .8px; text-transform: uppercase;
+          font-family: 'IBM Plex Mono', monospace; margin-bottom: 4px;
+        }
+        .quick-btn {
+          padding: 8px 18px; border-radius: 6px;
+          background: rgba(255,255,255,.06);
+          border: 1px solid var(--border);
+          color: rgba(255,255,255,.7);
+          font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 600;
+          cursor: pointer; transition: all .2s; letter-spacing: .2px;
+        }
+        .quick-btn:hover { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.2); }
+
+        /* ── Toast notification ── */
+        .toast {
+          position: fixed; bottom: 24px; right: 24px;
+          padding: 12px 20px; border-radius: 8px;
+          background: rgba(46,125,50,.15);
+          border: 1px solid rgba(46,125,50,.4);
+          color: #a5d6a7; font-size: 13px; font-weight: 600;
+          display: none; align-items: center; gap: 8px;
+          z-index: 999; animation: slideIn .3s ease;
+          box-shadow: 0 8px 24px rgba(0,0,0,.3);
+        }
+        .toast.show { display: flex; }
+        .toast.error { background: rgba(198,40,40,.15); border-color: rgba(198,40,40,.4); color: #ef9a9a; }
+        @keyframes slideIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* stagger children */
+        .stat-card:nth-child(1) { animation-delay: .05s; }
+        .stat-card:nth-child(2) { animation-delay: .10s; }
+        .stat-card:nth-child(3) { animation-delay: .15s; }
+        .stat-card:nth-child(4) { animation-delay: .20s; }
+        .report-card:nth-child(1) { animation-delay: .15s; }
+        .report-card:nth-child(2) { animation-delay: .22s; }
+        .report-card:nth-child(3) { animation-delay: .29s; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+          .navbar { padding: 0 16px; }
+          .main   { padding: 24px 16px 48px; }
+          .nav-subtitle { display: none; }
+          .page-header h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <div class="nav-icon">🎓</div>
+        <div>
+            <div class="nav-title">Education Loan</div>
+            <div class="nav-subtitle">ADMIN DASHBOARD</div>
+        </div>
+    </div>
+    <div class="nav-right">
+        <div class="nav-user">
+            <div class="nav-user-dot"></div>
+            <span>Signed in as &nbsp;<strong id="nav-username">...</strong></span>
+        </div>
+        <button class="btn-logout" onclick="logout()">⎋ Logout</button>
+    </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+    <!-- Page header -->
+    <div class="page-header">
+        <div class="greeting-time" id="greeting-time">─</div>
+        <h1 id="greeting-text">Welcome back 👋</h1>
+        <p>Here's what's happening in your Education Loan system today.</p>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-grid">
+        <div class="stat-card pink">
+            <div class="stat-icon">🔐</div>
+            <div class="stat-value stat-loading" id="stat-auth">—</div>
+            <div class="stat-label">Auth Operations</div>
+        </div>
+        <div class="stat-card blue">
+            <div class="stat-icon">👥</div>
+            <div class="stat-value stat-loading" id="stat-users">—</div>
+            <div class="stat-label">Total Users</div>
+        </div>
+        <div class="stat-card teal">
+            <div class="stat-icon">🔑</div>
+            <div class="stat-value stat-loading" id="stat-roles">—</div>
+            <div class="stat-label">Role Assignments</div>
+        </div>
+        <div class="stat-card green">
+            <div class="stat-icon">✅</div>
+            <div class="stat-value stat-loading" id="stat-success">—</div>
+            <div class="stat-label">Auth Success Rate</div>
+        </div>
+    </div>
+
+    <!-- Reports section -->
+    <div class="section-title">📊 Reports</div>
+    <div class="reports-grid">
+
+        <!-- Auth Summary -->
+        <div class="report-card pink" onclick="openReport()">
+            <div class="report-card-stripe"></div>
+            <div class="report-card-icon">📋</div>
+            <h3>Auth Summary Report</h3>
+            <p>Login, register and token refresh operations. Track success rates and failed attempts across all users.</p>
+            <div class="report-card-meta">
+                <span>/api/v1/auth</span>
+                <div style="display:flex;gap:8px">
+                    <button class="btn-pdf" onclick="downloadPdf(event,'auth-summary')">⬇ PDF</button>
+                    <button class="btn-open">View Report →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- User List -->
+        <div class="report-card blue" onclick="openReport()">
+            <div class="report-card-stripe"></div>
+            <div class="report-card-icon">👤</div>
+            <h3>User List Report</h3>
+            <p>All registered users with active status, email verification state and account creation timestamps.</p>
+            <div class="report-card-meta">
+                <span>/api/v1/users</span>
+                <div style="display:flex;gap:8px">
+                    <button class="btn-pdf" onclick="downloadPdf(event,'users')">⬇ PDF</button>
+                    <button class="btn-open">View Report →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Roles -->
+        <div class="report-card teal" onclick="openReport()">
+            <div class="report-card-stripe"></div>
+            <div class="report-card-icon">🔑</div>
+            <h3>User Roles Report</h3>
+            <p>Complete role assignment history — ADMIN, EMPLOYEE and USER roles with assignment timestamps.</p>
+            <div class="report-card-meta">
+                <span>/api/v1/user_roles</span>
+                <div style="display:flex;gap:8px">
+                    <button class="btn-pdf" onclick="downloadPdf(event,'user-roles')">⬇ PDF</button>
+                    <button class="btn-open">View Report →</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Quick actions -->
+    <div class="quick-actions">
+        <div class="quick-title">⚡ Quick Actions</div>
+        <button class="quick-btn" onclick="openReport()">📊 Open All Reports</button>
+        <button class="quick-btn" onclick="downloadPdf(event,'users')">⬇ Download User PDF</button>
+        <button class="quick-btn" onclick="downloadPdf(event,'user-roles')">⬇ Download Roles PDF</button>
+        <button class="quick-btn" onclick="downloadPdf(event,'auth-summary')">⬇ Download Auth PDF</button>
+        <button class="quick-btn" onclick="refreshStats()">↺ Refresh Stats</button>
+    </div>
+
+</main>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <span id="toast-icon">✓</span>
+    <span id="toast-msg"></span>
+</div>
+
+<script>
+
+    (function() {
+      if (!localStorage.getItem('token')) {
+        window.location.href = '/LoginRegister.html';
+      }
+    })();
+
+
+    const BASE_URL = '';
+    const API = {
+      auth:  BASE_URL + '/api/v1/reports/auth-summary-data',
+      users: BASE_URL + '/api/v1/reports/users-data',
+      roles: BASE_URL + '/api/v1/reports/user-roles-data',
+      pdfAuth:  BASE_URL + '/api/v1/reports/auth-summary',
+      pdfUsers: BASE_URL + '/api/v1/reports/users',
+      pdfRoles: BASE_URL + '/api/v1/reports/user-roles',
+    };
+
+    function getToken() {
+          return localStorage.getItem('token');
+        }
+
+    function authHeaders() {
+      return {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + getToken()
+      };
+    }
+
+    function setGreeting() {
+      const h = new Date().getHours();
+      const greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+      const username = localStorage.getItem('username') || 'Admin';
+      document.getElementById('nav-username').textContent = username;
+      document.getElementById('greeting-text').textContent = `${greet}, ${username} 👋`;
+      document.getElementById('greeting-time').textContent =
+        new Date().toLocaleString('en-IN', { weekday:'long', day:'2-digit', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' });
+    }
+
+
+    async function loadStats() {
+      try {
+        const [authRes, usersRes, rolesRes] = await Promise.all([
+          fetch(API.auth,  { headers: authHeaders() }),
+          fetch(API.users, { headers: authHeaders() }),
+          fetch(API.roles, { headers: authHeaders() }),
+        ]);
+
+        if (authRes.ok) {
+          const d = await authRes.json();
+          const logs = d.data || d;
+          const success = logs.filter(l => l.success === true).length;
+          const rate = logs.length ? ((success / logs.length) * 100).toFixed(0) + '%' : '—';
+          document.getElementById('stat-auth').textContent    = logs.length;
+          document.getElementById('stat-success').textContent = rate;
+          document.getElementById('stat-auth').classList.remove('stat-loading');
+          document.getElementById('stat-success').classList.remove('stat-loading');
+        }
+
+        if (usersRes.ok) {
+          const d = await usersRes.json();
+          const users = d.data || d;
+          document.getElementById('stat-users').textContent = users.length;
+          document.getElementById('stat-users').classList.remove('stat-loading');
+        }
+
+        if (rolesRes.ok) {
+          const d = await rolesRes.json();
+          const roles = d.data || d;
+          document.getElementById('stat-roles').textContent = roles.length;
+          document.getElementById('stat-roles').classList.remove('stat-loading');
+        }
+
+      } catch (err) {
+        console.error('Stats load failed:', err);
+      }
+    }
+
+    function refreshStats() {
+      // Reset to loading state
+      ['stat-auth','stat-users','stat-roles','stat-success'].forEach(id => {
+        document.getElementById(id).textContent = '—';
+        document.getElementById(id).classList.add('stat-loading');
+      });
+      loadStats().then(() => showToast('Stats refreshed', false));
+    }
+
+
+    function openReport() {
+      const token = getToken();
+      if (!token) { window.location.href = '/auth.html'; return; }
+      window.open('/Report-API.html?token=' + token, '_blank');
+    }
+
+
+    async function downloadPdf(event, type) {
+      event.stopPropagation(); // prevent report card click
+
+      const urlMap = {
+        'auth-summary': API.pdfAuth,
+        'users':        API.pdfUsers,
+        'user-roles':   API.pdfRoles,
+      };
+      const nameMap = {
+        'auth-summary': 'AuthSummaryReport.pdf',
+        'users':        'UserListReport.pdf',
+        'user-roles':   'UserRolesReport.pdf',
+      };
+
+      showToast('Generating PDF...', false);
+
+      try {
+        const res = await fetch(urlMap[type], { headers: authHeaders() });
+        if (!res.ok) { showToast('PDF generation failed: ' + res.status, true); return; }
+
+        const blob = await res.blob();
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href = url; a.download = nameMap[type];
+        document.body.appendChild(a); a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('✓ ' + nameMap[type] + ' downloaded', false);
+
+      } catch (err) {
+        showToast('Download failed: ' + err.message, true);
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('username');
+      window.location.href = '/LoginRegister.html';
+    }
+
+    let toastTimer;
+    function showToast(msg, isError) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      document.getElementById('toast-icon').textContent = isError ? '⚠' : '✓';
+      toast.className = 'toast show' + (isError ? ' error' : '');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+
+    function checkTokenExpiry() {
+      const token = getToken();
+      if (!token) return;
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const expiresIn = (payload.exp * 1000) - Date.now();
+        if (expiresIn < 0) {
+          showToast('Session expired. Please login again.', true);
+          setTimeout(() => logout(), 2000);
+        } else if (expiresIn < 5 * 60 * 1000) {
+          showToast('Session expires in less than 5 minutes.', true);
+        }
+      } catch(e) { /* ignore malformed token */ }
+    }
+
+
+    setGreeting();
+    loadStats();
+    checkTokenExpiry();
+    setInterval(checkTokenExpiry, 60000); // check every minute
+</script>
+</body>
+</html>

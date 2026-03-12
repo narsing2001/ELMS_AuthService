@@ -1,0 +1,7 @@
+2026-03-11 18:45:19 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | GET /api/v1/users/get/2 | IP=0:0:0:0:0:0:0:1 | status=200 | time=333ms
+2026-03-11 18:46:34 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | GET /api/v1/users/get/2 | IP=0:0:0:0:0:0:0:1 | status=200 | time=190ms
+2026-03-11 18:46:44 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | GET /api/v1/users/get/2 | IP=0:0:0:0:0:0:0:1 | status=200 | time=12ms
+2026-03-11 18:49:51 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | POST /api/v1/users/create | IP=0:0:0:0:0:0:0:1 | status=201 | time=744ms
+2026-03-11 18:51:05 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | POST /api/v1/users/create | IP=0:0:0:0:0:0:0:1 | status=201 | time=349ms
+2026-03-11 18:52:53 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | POST /api/v1/users/create | IP=0:0:0:0:0:0:0:1 | status=201 | time=999ms
+2026-03-11 18:54:19 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsu_patil_4641 | POST /api/v1/users/create | IP=0:0:0:0:0:0:0:1 | status=201 | time=722ms

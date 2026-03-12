@@ -1,0 +1,39 @@
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-11 18:45:09 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:45:18 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/get/2 | Tokens left: 4
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-11 18:46:25 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:46:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/get/2 | Tokens left: 4
+2026-03-11 18:46:44 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/get/2 | Tokens left: 3
+2026-03-11 18:49:50 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/create | Tokens left: 4
+2026-03-11 18:51:04 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/create | Tokens left: 4
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-11 18:52:36 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:52:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/create | Tokens left: 4
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-11 18:53:59 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-11 18:54:18 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/users/create | Tokens left: 4
