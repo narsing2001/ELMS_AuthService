@@ -24,7 +24,6 @@
         .tab{padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);transition:all .2s;font-family:'Archivo',sans-serif;position:relative;}
         .tab.active{background:#fff;color:#1a1a2e;}
         .tab:hover:not(.active){background:rgba(255,255,255,.14);color:rgba(255,255,255,.8);}
-        /* loading spinner on tab */
         .tab-spinner{display:none;width:8px;height:8px;border:1.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-left:6px;}
         .tab.loading .tab-spinner{display:inline-block;}
         .tab.active.loading .tab-spinner{border-top-color:#1a1a2e;border-color:rgba(26,26,46,.3);}
@@ -243,14 +242,17 @@
                 <span id="roles-generated-at">—</span>
             </div>
         </div>
+        <!-- ✅ onchange calls renderRoles() for instant client-side filtering -->
         <div class="filter-bar">
             <label>Filter by Role:</label>
-            <select id="role-filter" onchange="loadRoles()">
+            <select id="role-filter" onchange="renderRoles()">
                 <option value="ALL">ALL</option>
                 <option value="ROLE_ADMIN">ADMIN</option>
                 <option value="ROLE_EMPLOYEE">EMPLOYEE</option>
                 <option value="ROLE_USER">USER</option>
             </select>
+            <!-- Live debug: shows exact role name values coming from your API -->
+            <span id="role-names-debug" style="font-size:10px;color:#888;font-family:monospace;margin-left:12px;"></span>
         </div>
         <div class="tbl-wrap">
             <table class="role-tbl">
@@ -325,7 +327,7 @@
         });
     }
 
-
+    /* Handles Java LocalDateTime array [2026,3,12,14,30,0] OR ISO string */
     function fmtDatetime(val) {
         if (!val) return '—';
         if (Array.isArray(val)) {
@@ -352,7 +354,12 @@
     }
     function pad(n) { return String(n).padStart(2,'0'); }
 
-
+    /*
+     * Jackson strips "is" prefix from boolean getters:
+     *   isActive        → "active"
+     *   isEmailVerified → "emailVerified"
+     * bool() tries both so it works regardless of Jackson config
+     */
     function bool(obj, ...keys) {
         for (const k of keys) {
             if (obj[k] !== undefined && obj[k] !== null) return Boolean(obj[k]);
@@ -375,7 +382,7 @@
         setTimeout(() => b.classList.remove('show'), 6000);
     }
 
-
+    /* Unwrap ApiResponse<T> if present: { success, message, data: [...] } */
     function unwrap(data) {
         if (data && data.data !== undefined && data.data !== null) return data.data;
         return data;
@@ -472,6 +479,7 @@
             setDebugSample('users', users[0]);
 
             tbody.innerHTML = users.map(u => {
+                /* Jackson strips "is" prefix → isActive → "active", isEmailVerified → "emailVerified" */
                 const isActive   = bool(u, 'active',        'isActive');
                 const isVerified = bool(u, 'emailVerified', 'isEmailVerified');
                 return `<tr>
@@ -503,24 +511,61 @@
         finally    { tabLoading('users', false); setUpdated(); }
     }
 
+
+    let allRolesData = [];
     async function loadRoles() {
         tabLoading('roles', true);
-        const tbody  = document.getElementById('roles-tbody');
-        const filter = document.getElementById('role-filter').value;
+        const tbody = document.getElementById('roles-tbody');
         tbody.innerHTML = skeletonRows(10);
+        try {
+            const res = await fetch(EP.roles, { headers: authHeaders() });
+            if (!res.ok) { showError(`Roles: HTTP ${res.status}`); renderEmpty('roles-tbody', 10); return; }
+            allRolesData = unwrap(await res.json());
+            if (!Array.isArray(allRolesData) || !allRolesData.length) {
+                renderEmpty('roles-tbody', 10, 'No role assignments found.');
+                return;
+            }
+            setDebugSample('roles', allRolesData[0]);
+
+            // Show exact role name values from API in the filter bar
+            const uniqueRoles = [...new Set(allRolesData.map(r =>
+                r.roleName || r.role_name || r.name || '?'
+            ))];
+            const dbg = document.getElementById('role-names-debug');
+            if (dbg) dbg.textContent = `API role values: ${uniqueRoles.join(', ')}`;
+
+            renderRoles();
+        } catch(e) { showError('Roles load failed: ' + e.message); renderEmpty('roles-tbody', 10); }
+        finally    { tabLoading('roles', false); setUpdated(); }
+    }
+
+
+    function renderRoles() {
+        const filter = document.getElementById('role-filter').value;   // e.g. "ROLE_ADMIN"
+        const tbody  = document.getElementById('roles-tbody');
+
+
+        const filtered = filter === 'ALL'
+            ? allRolesData
+            : allRolesData.filter(r => {
+                const rn = (r.roleName || r.role_name || r.name || '').toUpperCase();
+                const f  = filter.replace('ROLE_', '').toUpperCase(); // strip ROLE_ → "ADMIN"
+                return rn === filter.toUpperCase()   // exact: "ROLE_ADMIN" === "ROLE_ADMIN"
+                    || rn === f                       // short:  "ADMIN"      === "ADMIN"
+                    || rn.includes(f)                 // partial:"ROLE_ADMIN".includes("ADMIN")
+                    || f.includes(rn);                // reverse:"ADMIN".includes("ADMIN")
+              });
+
         document.getElementById('roles-meta-left').textContent =
             `Generated by: System  |  Role filter: ${filter}`;
-        try {
-            const res   = await fetch(EP.roles + '?roleFilter=' + encodeURIComponent(filter), { headers: authHeaders() });
-            if (!res.ok) { showError(`Roles: HTTP ${res.status}`); renderEmpty('roles-tbody', 10); return; }
-            const roles = unwrap(await res.json());
-            if (!Array.isArray(roles) || !roles.length) { renderEmpty('roles-tbody', 10, 'No role assignments found.'); return; }
 
-            setDebugSample('roles', roles[0]);
-
-            tbody.innerHTML = roles.map(r => {
+        if (!filtered.length) {
+            renderEmpty('roles-tbody', 10, `No records found for role: ${filter}`);
+        } else {
+            tbody.innerHTML = filtered.map(r => {
                 const rn  = (r.roleName || r.role_name || r.name || '').toUpperCase();
-                const cls = rn.includes('ADMIN') ? 'b-admin' : rn.includes('EMPLOYEE') ? 'b-employee' : 'b-user';
+                const cls = rn.includes('ADMIN') ? 'b-admin'
+                          : rn.includes('EMPLOYEE') ? 'b-employee' : 'b-user';
                 return `<tr>
                     <td>${r.id         ?? '—'}</td>
                     <td>${r.userId     ?? r.user_id   ?? '—'}</td>
@@ -534,25 +579,23 @@
                     <td>${fmtDatetime(r.assignedAt || r.assigned_at)}</td>
                 </tr>`;
             }).join('');
+        }
 
-            const total     = roles.length;
-            const admins    = roles.filter(r => (r.roleName||r.name||'').toUpperCase().includes('ADMIN')).length;
-            const employees = roles.filter(r => (r.roleName||r.name||'').toUpperCase().includes('EMPLOYEE')).length;
-            const users     = roles.filter(r => {
-                const n = (r.roleName||r.name||'').toUpperCase();
-                return n.includes('USER') && !n.includes('ADMIN') && !n.includes('EMPLOYEE');
-            }).length;
+        const total     = filtered.length;
+        const admins    = filtered.filter(r => (r.roleName||r.name||'').toUpperCase().includes('ADMIN')).length;
+        const employees = filtered.filter(r => (r.roleName||r.name||'').toUpperCase().includes('EMPLOYEE')).length;
+        const users     = filtered.filter(r => {
+            const n = (r.roleName||r.name||'').toUpperCase();
+            return n.includes('USER') && !n.includes('ADMIN') && !n.includes('EMPLOYEE');
+        }).length;
 
-            document.getElementById('roles-summary').innerHTML = `
-                <div class="sum-item"><div class="sum-label">Total Assignments</div><div class="sum-value">${total}</div></div>
-                <div class="sum-item"><div class="sum-label" style="color:#7B1FA2">ADMIN</div><div class="sum-value" style="color:#7B1FA2">${admins}</div></div>
-                <div class="sum-item"><div class="sum-label" style="color:#1565C0">EMPLOYEE</div><div class="sum-value" style="color:#1565C0">${employees}</div></div>
-                <div class="sum-item"><div class="sum-label" style="color:#2E7D32">USER</div><div class="sum-value" style="color:#2E7D32">${users}</div></div>`;
-            document.getElementById('roles-generated-at').textContent = 'Generated: ' + nowStr();
-            document.getElementById('roles-page').textContent = `Page 1 of 1  (${total} records)`;
-
-        } catch(e) { showError('Roles load failed: ' + e.message); renderEmpty('roles-tbody', 10); }
-        finally    { tabLoading('roles', false); setUpdated(); }
+        document.getElementById('roles-summary').innerHTML = `
+            <div class="sum-item"><div class="sum-label">Total Assignments</div><div class="sum-value">${total}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#7B1FA2">ADMIN</div><div class="sum-value" style="color:#7B1FA2">${admins}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#1565C0">EMPLOYEE</div><div class="sum-value" style="color:#1565C0">${employees}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#2E7D32">USER</div><div class="sum-value" style="color:#2E7D32">${users}</div></div>`;
+        document.getElementById('roles-generated-at').textContent = 'Generated: ' + nowStr();
+        document.getElementById('roles-page').textContent = `Page 1 of 1  (${total} records)`;
     }
 
 

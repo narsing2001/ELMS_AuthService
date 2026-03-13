@@ -1,0 +1,4 @@
+2026-03-11 18:49:50 INFO  c.e.e.i.TokenExpiryInterceptor - Token expiring soon for URL: /api/v1/users/create | Time left: 421s
+2026-03-11 18:51:04 INFO  c.e.e.i.TokenExpiryInterceptor - Token expiring soon for URL: /api/v1/users/create | Time left: 347s
+2026-03-11 18:52:52 INFO  c.e.e.i.TokenExpiryInterceptor - Token expiring soon for URL: /api/v1/users/create | Time left: 239s
+2026-03-11 18:54:18 INFO  c.e.e.i.TokenExpiryInterceptor - Token expiring soon for URL: /api/v1/users/create | Time left: 153s

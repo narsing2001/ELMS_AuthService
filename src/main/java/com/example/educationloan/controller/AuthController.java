@@ -1,5 +1,6 @@
 package com.example.educationloan.controller;
 
+import com.example.educationloan.dto.RefreshRequestDTO;
 import com.example.educationloan.security.jwt.AuthService;
 import com.example.educationloan.dto.AuthDTO;
 import com.example.educationloan.dto.LoginDTO;
@@ -68,4 +69,17 @@ public class AuthController {
                 response.getRefreshTokenExpiresInSeconds());
         return ResponseEntity.ok(new ApiResponse<>(true, "Token refreshed successfully", response));
     }
+
+    @PostMapping("/refresh1")
+    public ResponseEntity<ApiResponse<AuthDTO>> refresh(@RequestBody RefreshRequestDTO request) {
+        log.info("REQUEST  : POST /api/v1/auth/refresh | Token refresh initiated");
+        AuthDTO response = authService.refresh(request.getRefreshToken());
+        logAuthTable("REFRESH_TOKEN", response);
+        log.info("RESPONSE : 200 OK | username={} | tokenType={} | newAccessExpiresIn={}sec | refreshExpiresIn={}sec",
+                response.getUsername(), response.getTokenType(),
+                response.getAccessTokenExpiresInSeconds(),
+                response.getRefreshTokenExpiresInSeconds());
+        return ResponseEntity.ok(new ApiResponse<>(true, "Token refreshed successfully", response));
+    }
+
 }

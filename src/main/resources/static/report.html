@@ -263,7 +263,7 @@
 </div>
 
 <script>
-<!-------------------configuration all---------------------->
+
     const BASE = '';
     const ENDPOINTS = {
         auth:  BASE + '/api/v1/reports/auth-summary-data',
@@ -271,7 +271,7 @@
         roles: BASE + '/api/v1/reports/user-roles-data',
     };
 
-<!---------------------token--------------------------->
+
     function getToken() {
         return new URLSearchParams(window.location.search).get('token')
             || localStorage.getItem('token')
@@ -285,7 +285,7 @@
         return h;
     }
 
-<!-------------------debug--------------------->
+
     let debugVisible = false;
     let lastSampleRow = null;
     function toggleDebug() {
@@ -307,7 +307,7 @@
         }
     }
 
-<!-------------tab switching----------------------------------------->
+
     let activeTab = 'auth';
     function switchTab(id, tabEl) {
         ['auth','users','roles'].forEach(t => {
@@ -322,7 +322,7 @@
         if (id === 'roles') loadRoles();
     }
 
-<!----------------------helper------------------------------>
+
     function nowStr() {
         return new Date().toLocaleString('en-IN', {
             day:'2-digit', month:'2-digit', year:'numeric',
@@ -330,7 +330,7 @@
         });
     }
 
-<!---------Java sends LocalDateTime as array [2026,3,12,14,30,0,0] OR ISO string------------>
+
     function fmtDatetime(val) {
         if (!val) return '—';
         if (Array.isArray(val)) {
@@ -357,10 +357,6 @@
         } catch { return String(val); }
     }
 
-<!--    BOOLEAN RESOLVER ──-->
-<!--    Jackson strips "is" prefix: isActive → active, isEmailVerified → emailVerified-->
-<!--    This tries both forms so it works regardless of your Jackson config-->
-
     function bool(obj, ...keys) {
         for (const k of keys) {
             if (obj[k] !== undefined && obj[k] !== null) return Boolean(obj[k]);
@@ -383,13 +379,13 @@
         setTimeout(() => b.classList.remove('show'), 6000);
     }
 
-<!--------unwrap ApiResponse<T> wrapper if present-------------------->
+
     function unwrap(data) {
         if (data && data.data !== undefined && data.data !== null) return data.data;
         return data;
     }
 
-<!----------------------LOAD AUTH SUMMARY -------------------------------------------->
+
     async function loadAuth() {
         const tbody = document.getElementById('auth-tbody');
         tbody.innerHTML = skeletonRows(9);
@@ -403,14 +399,13 @@
             setDebugSample(logs[0]);
 
             tbody.innerHTML = logs.map(l => {
-<!--------------operation: try "operation" field, fallback "operationType"----------------------------------->
                 const op = (l.operation || l.operationType || '').toUpperCase();
                 const opBadge = op === 'LOGIN'   ? `<span class="badge b-login">LOGIN</span>`
                               : op === 'REGISTER'? `<span class="badge b-register">REGISTER</span>`
                               : op              ? `<span class="badge b-refresh">${op}</span>`
                               :                   '—';
 
-<!---------------success: bool() tries both "success" and "isSuccess"------------------------------>
+
                 const isOk = bool(l, 'success', 'isSuccess');
                 const statusBadge = isOk
                     ? `<span class="badge b-success">SUCCESS</span>`
@@ -468,7 +463,7 @@
         document.getElementById('auth-summary').innerHTML = '';
     }
 
-<!---------------load user------------------------------>
+
     async function loadUsers() {
         const tbody = document.getElementById('users-tbody');
         tbody.innerHTML = skeletonRows(8);
@@ -537,7 +532,6 @@
         document.getElementById('users-summary').innerHTML = '';
     }
 
-<!----------------load roles----------------------------------------->
     async function loadRoles() {
         const tbody  = document.getElementById('roles-tbody');
         const filter = document.getElementById('role-filter').value;
@@ -603,7 +597,7 @@
         document.getElementById('roles-summary').innerHTML = '';
     }
 
-<!-----------refresh button for the new entries fetch------------------->
+
     function refreshCurrent() {
         const btn = document.getElementById('refresh-btn');
         btn.disabled = true; btn.textContent = '↺ Loading...';
@@ -617,7 +611,6 @@
         document.getElementById('last-updated').textContent = 'Last updated: ' + nowStr();
     }
 
-<!-------init-------->
     loadAuth();
 </script>
 </body>

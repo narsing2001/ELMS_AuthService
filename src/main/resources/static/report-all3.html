@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Report Preview – Live</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <style>
+        *{
+         box-sizing:border-box;
+         margin:0;padding:0;
+         }
+
+        body{
+         background:#1a1a2e;
+         font-family:'Archivo',sans-serif;
+         color:#1a1a1a;
+         padding:24px;
+         }
+
+        .topbar{
+         display:flex;
+         align-items:center;
+         justify-content:space-between;
+         margin-bottom:20px;
+         flex-wrap:wrap;
+         gap:12px;
+         }
+
+        .topbar-left{
+         display:flex;
+         align-items:center;
+         gap:10px;
+         }
+
+        .topbar-brand{
+         font-size:13px;
+         font-weight:700;
+         color:#fff;
+         font-family:'IBM Plex Mono',
+         monospace;
+         }
+
+        .topbar-status{
+         font-size:10px;
+         color:rgba(255,255,255,.45);
+         font-family:'IBM Plex Mono',
+         monospace;display:flex;
+         align-items:center;
+         gap:6px;
+         }
+
+        .live-dot{
+         width:7px;
+         height:7px;
+         border-radius:50%;
+         background:#4caf50;
+         box-shadow:0 0 6px #4caf50;
+         animation:blink 2s ease-in-out infinite;
+         }
+
+        @keyframes blink{
+        0%,100%{
+             opacity:1;
+           }50%{
+           opacity:.3;
+           }
+        }
+
+        .topbar-right{
+         display:flex;
+         gap:8px;
+         flex-wrap:wrap;
+         }
+
+        .btn-refresh{
+         padding:6px 14px;
+         border-radius:6px;
+         background:rgba(255,255,255,.08);
+         border:1px solid rgba(255,255,255,.15);
+         color:rgba(255,255,255,.7);
+         font-family:'Archivo',sans-serif;
+         font-size:12px;
+         font-weight:700;
+         cursor:pointer;
+         transition:all .2s;
+         }
+
+        .btn-refresh:hover{
+         background:rgba(255,255,255,.15);
+         color:#fff;
+         }
+
+        .btn-refresh:disabled{
+         opacity:.4;
+         cursor:not-allowed;
+         }
+
+        .tabs{
+         display:flex;
+         gap:8px;
+         margin-bottom:24px;
+         flex-wrap:wrap;
+         }
+
+        .tab{
+         padding:8px 20px;
+         border-radius:6px;
+         cursor:pointer;
+         font-size:13px;
+         font-weight:600;
+         background:rgba(255,255,255,.08);
+         color:rgba(255,255,255,.5);
+         border:1px solid rgba(255,255,255,.1);
+         transition:all .2s;font-family:'Archivo',sans-serif;
+         position:relative;
+         }
+
+        .tab.active{
+         background:#fff;
+         color:#1a1a2e;
+         }
+
+        .tab:hover:not(.active){
+         background:rgba(255,255,255,.14);
+         color:rgba(255,255,255,.8);
+         }
+
+        .tab-spinner{
+         display:none;
+         width:8px;
+         height:8px;
+         border:1.5px solid rgba(255,255,255,.3);
+         border-top-color:#fff;
+         border-radius:50%;
+         animation:spin .7s linear infinite;
+         vertical-align:middle;
+         margin-left:6px;
+         }
+
+        .tab.loading .tab-spinner{
+         display:inline-block;
+         }
+
+        .tab.active.loading .tab-spinner{
+         border-top-color:#1a1a2e;
+         border-color:rgba(26,26,46,.3);
+         }
+
+        @keyframes spin{
+          to{transform:rotate(360deg);
+          }
+         }
+
+        .skeleton-row td{
+         padding:8px 10px;
+         }
+
+        .skel{
+         height:14px;
+         border-radius:4px;
+         background:linear-gradient(90deg,#eee 25%,#f5f5f5 50%,#eee 75%);
+         background-size:200% 100%;
+         animation:shimmer 1.4s infinite;
+         display:inline-block;
+         }
+
+        @keyframes shimmer{
+         from{background-position:200% 0;}
+         to{background-position:-200% 0;}
+         }
+
+        .error-banner{
+         padding:12px 20px;
+         border-radius:8px;
+         margin-bottom:16px;
+         background:rgba(198,40,40,.15);
+         border:1px solid rgba(198,40,40,.4);
+         color:#ef9a9a;
+         font-size:12px;
+         display:none;
+         align-items:center;gap:8px;
+         }
+
+        .error-banner.show{
+         display:flex;
+         }
+
+        .paper{
+         background:#fff;
+         box-shadow:0 20px 60px rgba(0,0,0,.5);
+         border-radius:4px;
+         overflow:hidden;max-width:100%;
+         }
+
+        .rpt-header{
+         padding:22px 28px 18px;
+         color:#fff;
+         }
+
+        .rpt-title{
+         font-size:22px;
+         font-weight:900;
+         letter-spacing:-.3px;
+         margin-bottom:4px;
+         }
+
+        .rpt-sub{
+         font-size:11px;
+         opacity:.7;
+         margin-bottom:14px;
+         }
+
+        .rpt-meta{
+         display:flex;
+         justify-content:space-between;
+         align-items:center;
+         font-size:10px;
+         opacity:.75;
+         padding-top:10px;
+         border-top:1px solid rgba(255,255,255,.2);
+         flex-wrap:wrap;gap:4px;
+         }
+
+        .legend{
+         display:flex;
+         gap:6px;
+         flex-wrap:wrap;
+         margin-top:8px;
+         }
+
+        .chip{
+         padding:3px 10px;
+         border-radius:3px;
+         font-size:10px;
+         font-weight:700;
+         font-family:'IBM Plex Mono',monospace;
+         color:#fff;}
+        .tbl-wrap{overflow-x:auto;
+        }
+
+        table{
+        width:100%;
+        border-collapse:collapse;
+        font-size:11.5px;
+        }
+
+        thead tr{
+        color:#fff;
+        }
+
+        thead th{
+        padding:9px 10px;
+        font-weight:700;
+        font-size:11px;
+        text-align:left;
+        white-space:nowrap;
+        }
+
+        tbody tr:nth-child(odd){
+        background:#fff;
+        }
+
+        tbody tr:nth-child(even){
+        background:#fce4ec;
+        }
+
+        tbody tr:hover{
+        background:#ffeef5;
+        }
+
+        td{
+        padding:8px 10px;
+        vertical-align:middle;
+        white-space:nowrap;
+        }
+
+        .badge{
+         display:inline-block;
+         padding:3px 9px;
+         border-radius:3px;
+         font-size:10px;
+         font-weight:700;
+         color:#fff;
+         font-family:'IBM Plex Mono',monospace;
+         }
+
+        .b-register{
+         background:#1976D2;
+         }
+
+         .b-login{
+         background:#2E7D32;
+         }
+
+         .b-refresh{
+         background:#E65100;
+         }
+
+        .b-success{
+         background:#2E7D32;
+         }
+
+        .b-failed{
+         background:#C62828;
+         }
+
+        .b-active{
+         background:#C8E6C9;
+         color:#1B5E20;
+         border:1px solid #81C784;
+         }
+
+        .b-inactive{
+         background:#FFCDD2;
+         color:#B71C1C;
+         border:1px solid #EF9A9A;
+         }
+
+        .b-verified{
+         background:#C8E6C9;
+         color:#1B5E20;
+         border:1px solid #81C784;
+         }
+
+        .b-pending{
+         background:#FFF9C4;
+         color:#F57F17;
+         border:1px solid #F9A825;
+         }
+
+        .b-admin{
+         background:#7B1FA2;
+         }
+
+         .b-employee{
+         background:#1565C0;
+         }
+
+         .b-user{
+         background:#2E7D32;
+         }
+
+        .summary{
+         padding:16px 28px;
+         border-top:2px solid;
+         }
+
+        .sum-grid{
+         display:flex;
+         gap:32px;flex-wrap:wrap;
+         margin-top:8px;
+         }
+
+        .sum-item{
+         display:flex;
+         flex-direction:column;
+         gap:2px;
+         }
+
+        .sum-label{
+         font-size:10px;
+         color:#777;
+         }
+
+        .sum-value{
+         font-size:16px;
+         font-weight:900;
+         font-family:'IBM Plex Mono',monospace;
+         }
+
+        .page-footer{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:8px 28px;
+        background:#f8f8f8;
+        border-top:1px solid #e0e0e0;
+        font-size:10px;color:#999;
+        }
+
+        .auth-hdr{
+        background:linear-gradient(135deg,#880E4F,#AD1457);
+        }
+
+        .auth-thead th{
+         background:#AD1457;
+         }
+
+        .auth-sum{
+         border-color:#AD1457;
+         }
+
+         .auth-sum .sum-value{
+          color:#880E4F;
+          }
+
+        .user-hdr{
+         background:linear-gradient(135deg,#1565C0,#1976D2);
+         }
+
+         .user-thead th{
+         background:#1976D2;
+         }
+
+        .user-sum{
+         border-color:#1565C0;
+         }
+
+         .user-sum .sum-value{
+          color:#1565C0;
+          }
+
+        .user-tbl tbody tr:nth-child(even){
+         background:#E3F2FD;
+         }
+
+         .user-tbl tbody tr:hover{
+         background:#BBDEFB;
+         }
+
+        .role-hdr{
+         background:linear-gradient(135deg,#00695C,#00897B);
+         }
+
+         .role-thead th{
+         background:#00897B;
+         }
+
+        .role-sum{
+         border-color:#00695C;
+         }
+
+         .role-sum .sum-value{
+          color:#00695C;
+          }
+
+        .role-tbl tbody tr:nth-child(even){
+         background:#E0F2F1;
+         }
+
+         .role-tbl tbody tr:hover{
+          background:#B2DFDB;
+          }
+
+        .empty-row td{
+         text-align:center;
+         padding:32px;
+         color:#aaa;
+         font-style:italic;
+         font-size:12px;
+         }
+
+        .filter-bar{
+        display:flex;
+        align-items:center;
+        gap:14px;
+        padding:10px 28px;
+        background:#f8f8f8;
+        border-bottom:1px solid #e0e0e0;
+        flex-wrap:wrap;
+        }
+
+        .filter-group{
+        display:flex;
+        align-items:center;
+        gap:6px;
+        }
+
+        .filter-bar label{
+        font-size:11px;
+        font-weight:700;
+        color:#555;
+        white-space:nowrap;
+        }
+
+        .filter-bar select,.filter-bar input[type=text]{
+        padding:5px 10px;
+        border:1px solid #ccc;border-radius:4px;
+        font-size:12px;
+        font-family:'Archivo',sans-serif;
+        background:#fff;
+        cursor:pointer;
+        }
+
+        .filter-bar input[type=text]{
+         min-width:160px;
+         cursor:text;
+         }
+
+        .filter-bar input[type=text]::placeholder{
+         color:#bbb;
+         }
+
+        .btn-clear-filter{
+         padding:5px 10px;
+         border-radius:4px;
+         border:1px solid #ccc;
+         background:#fff;
+         font-size:11px;
+         font-weight:700;
+         color:#888;
+         cursor:pointer;transition:all .15s;
+         }
+
+        .btn-clear-filter:hover{
+         background:#f0f0f0;
+         color:#333;
+         }
+
+        .btn-gen-report{
+         display:inline-flex;
+         align-items:center;
+         gap:6px;
+         padding:6px 16px;
+         border-radius:6px;
+         border:none;
+         font-family:'Archivo',sans-serif;
+         font-size:12px;
+         font-weight:700;
+         cursor:pointer;
+         transition:all .2s;
+         color:#fff;
+         }
+
+        .btn-gen-report:hover{
+         opacity:.88;
+         transform:translateY(-1px);
+         }
+
+        .gen-bar{
+         display:flex;
+         align-items:center;
+         justify-content:flex-end;
+         padding:10px 28px;
+         background:#f8f8f8;
+         border-bottom:1px solid #e0e0e0;gap:8px;
+         }
+
+        .gen-bar span{
+        font-size:11px;
+        color:#aaa;
+        }
+
+        /* shows actual API operation values — helps debug refresh token naming */
+        .op-debug{
+         font-size:10px;
+         color:#777;
+         font-family:monospace;
+         padding:5px 28px;
+         background:#fffde7;
+         border-bottom:1px solid #fff9c4;
+         display:none;
+         }
+
+        .op-debug.show{
+         display:block;
+         }
+
+        .report-panel{
+         display:none;
+         }
+
+         .report-panel.active{
+          display:block;
+          }
+
+        .debug-bar{
+         margin-bottom:12px;
+         padding:10px 14px;
+         border-radius:6px;
+         background:rgba(255,255,255,.05);
+         border:1px solid rgba(255,255,255,.1);
+         font-size:10px;
+         color:rgba(255,255,255,.4);
+         font-family:'IBM Plex Mono',monospace;
+         display:none;
+         word-break:break-all;
+         }
+
+        .debug-bar.show{
+         display:block;
+        }
+
+        @media print{
+            body{background:#fff;padding:0;}
+            .topbar,.tabs,.debug-bar,.error-banner,.filter-bar,.gen-bar,.op-debug{display:none!important;}
+            .report-panel{display:block!important;}
+            .paper{box-shadow:none;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="topbar-left">
+        <div class="topbar-brand">🎓 Education Loan · Reports</div>
+        <div class="topbar-status"><div class="live-dot"></div><span id="last-updated">Loading all reports...</span></div>
+    </div>
+    <div class="topbar-right">
+        <button class="btn-refresh" onclick="toggleDebug()" style="opacity:.5;">🔍 Debug</button>
+        <button class="btn-refresh" id="refresh-btn" onclick="refreshAll()">↺ Refresh All</button>
+    </div>
+</div>
+
+<div class="debug-bar" id="debug-bar">
+    <strong style="color:rgba(255,255,255,.6)">DEBUG – Raw API field names:</strong>
+    <span id="debug-content"> — load a tab first —</span>
+</div>
+<div class="error-banner" id="error-banner"><span>⚠</span><span id="error-msg"></span></div>
+
+<div class="tabs">
+    <div class="tab active" id="tab-auth"  onclick="switchTab('auth',this)">📋 Auth Summary Report<span class="tab-spinner"></span></div>
+    <div class="tab" id="tab-users" onclick="switchTab('users',this)">👤 User List Report<span class="tab-spinner"></span></div>
+    <div class="tab" id="tab-roles" onclick="switchTab('roles',this)">🔑 User Roles Report<span class="tab-spinner"></span></div>
+</div>
+
+<!-- ══ AUTH ══ -->
+<div class="report-panel active" id="panel-auth">
+    <div class="paper">
+        <div class="rpt-header auth-hdr">
+            <div class="rpt-title">Education Loan – Auth Operations Report</div>
+            <div class="rpt-sub">Auth Service  –  /api/v1/auth  (register · login · refresh)</div>
+            <div class="legend">
+                <span class="chip" style="background:#1976D2">REGISTER</span>
+                <span class="chip" style="background:#2E7D32">LOGIN</span>
+                <span class="chip" style="background:#E65100">REFRESH_TOKEN</span>
+                <span class="chip" style="background:#2E7D32">SUCCESS</span>
+                <span class="chip" style="background:#C62828">FAILED</span>
+            </div>
+            <div class="rpt-meta">
+                <span>Generated by: System &nbsp;|&nbsp; Live data from AuthLogStore</span>
+                <span id="auth-generated-at">—</span>
+            </div>
+        </div>
+
+        <!-- live indicator: shows exact operation strings coming from your API -->
+        <div class="op-debug" id="auth-op-debug"></div>
+
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Operation:</label>
+                <select id="auth-filter-op" onchange="renderAuth()">
+                    <option value="ALL">ALL</option>
+                    <option value="REGISTER">REGISTER</option>
+                    <option value="LOGIN">LOGIN</option>
+                    <option value="REFRESH_TOKEN">REFRESH TOKEN</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Status:</label>
+                <select id="auth-filter-status" onchange="renderAuth()">
+                    <option value="ALL">ALL</option>
+                    <option value="SUCCESS">SUCCESS</option>
+                    <option value="FAILED">FAILED</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Username:</label>
+                <input type="text" id="auth-filter-user" placeholder="Search username…" oninput="renderAuth()"/>
+            </div>
+            <button class="btn-clear-filter" onclick="clearAuthFilters()">✕ Clear</button>
+            <span id="auth-filter-count" style="font-size:11px;color:#aaa;margin-left:auto;"></span>
+        </div>
+        <div class="gen-bar">
+            <span id="auth-gen-info"></span>
+            <button class="btn-gen-report" style="background:#AD1457;" onclick="generateReport('auth')">⬇ Generate Auth Report</button>
+        </div>
+        <div class="tbl-wrap">
+            <table><thead class="auth-thead"><tr>
+                <th>Username</th><th>Operation</th><th>Status</th><th>Token Type</th>
+                <th>Access Expires At</th><th>Refresh Expires At</th>
+                <th>Acc Exp(s)</th><th>Ref Exp(s)</th><th>Timestamp</th>
+            </tr></thead><tbody id="auth-tbody"></tbody></table>
+        </div>
+        <div class="summary auth-sum">
+            <div style="font-size:12px;font-weight:700;color:#880E4F;">Auth Summary</div>
+            <div class="sum-grid" id="auth-summary"></div>
+        </div>
+        <div class="page-footer">
+            <span>Education Loan Auth Service · AuthSummaryReport</span>
+            <span id="auth-page">Page 1 of 1</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══ USERS ══ -->
+<div class="report-panel" id="panel-users">
+    <div class="paper">
+        <div class="rpt-header user-hdr">
+            <div class="rpt-title">Education Loan – User List Report</div>
+            <div class="rpt-sub">Auth Service  –  /api/v1/users</div>
+            <div class="rpt-meta"><span>Generated by: System</span><span id="users-generated-at">—</span></div>
+        </div>
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Active:</label>
+                <select id="users-filter-active" onchange="renderUsers()">
+                    <option value="ALL">ALL</option><option value="YES">Active</option><option value="NO">Inactive</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Email Verified:</label>
+                <select id="users-filter-verified" onchange="renderUsers()">
+                    <option value="ALL">ALL</option><option value="VERIFIED">Verified</option><option value="PENDING">Pending</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Search:</label>
+                <input type="text" id="users-filter-search" placeholder="Name / email / username…" oninput="renderUsers()"/>
+            </div>
+            <button class="btn-clear-filter" onclick="clearUsersFilters()">✕ Clear</button>
+            <span id="users-filter-count" style="font-size:11px;color:#aaa;margin-left:auto;"></span>
+        </div>
+        <div class="gen-bar">
+            <span id="users-gen-info"></span>
+            <button class="btn-gen-report" style="background:#1565C0;" onclick="generateReport('users')">⬇ Generate Users Report</button>
+        </div>
+        <div class="tbl-wrap">
+            <table class="user-tbl"><thead class="user-thead"><tr>
+                <th>User ID</th><th>Username</th><th>First Name</th><th>Last Name</th>
+                <th>Email</th><th>Active</th><th>Email Verified</th><th>Created At</th>
+            </tr></thead><tbody id="users-tbody"></tbody></table>
+        </div>
+        <div class="summary user-sum">
+            <div style="font-size:12px;font-weight:700;color:#1565C0;">Report Summary</div>
+            <div class="sum-grid" id="users-summary"></div>
+        </div>
+        <div class="page-footer"><span>Education Loan Auth Service · UserListReport</span><span id="users-page">Page 1 of 1</span></div>
+    </div>
+</div>
+
+<!-- ══ ROLES ══ -->
+<div class="report-panel" id="panel-roles">
+    <div class="paper">
+        <div class="rpt-header role-hdr">
+            <div class="rpt-title">Education Loan – User Roles Assignment Report</div>
+            <div class="rpt-sub">Auth Service  –  /api/v1/user_roles  &amp;  /api/v1/roles</div>
+            <div class="rpt-meta">
+                <span id="roles-meta-left">Generated by: System &nbsp;|&nbsp; Role filter: ALL</span>
+                <span id="roles-generated-at">—</span>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Filter by Role:</label>
+                <select id="role-filter" onchange="renderRoles()">
+                    <option value="ALL">ALL</option>
+                    <option value="ROLE_ADMIN">ADMIN</option>
+                    <option value="ROLE_EMPLOYEE">EMPLOYEE</option>
+                    <option value="ROLE_USER">USER</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Search:</label>
+                <input type="text" id="roles-filter-search" placeholder="Username / email…" oninput="renderRoles()"/>
+            </div>
+            <button class="btn-clear-filter" onclick="clearRolesFilters()">✕ Clear</button>
+            <span id="role-names-debug" style="font-size:10px;color:#aaa;font-family:monospace;margin-left:auto;"></span>
+            <span id="roles-filter-count" style="font-size:11px;color:#aaa;"></span>
+        </div>
+        <div class="gen-bar">
+            <span id="roles-gen-info"></span>
+            <button class="btn-gen-report" style="background:#00695C;" onclick="generateReport('roles')">⬇ Generate Roles Report</button>
+        </div>
+        <div class="tbl-wrap">
+            <table class="role-tbl"><thead class="role-thead"><tr>
+                <th>UR ID</th><th>User ID</th><th>Username</th><th>First Name</th><th>Last Name</th>
+                <th>Email</th><th>Role ID</th><th>Role Name</th><th>Assigned By</th><th>Assigned At</th>
+            </tr></thead><tbody id="roles-tbody"></tbody></table>
+        </div>
+        <div class="summary role-sum">
+            <div style="font-size:12px;font-weight:700;color:#00695C;">Summary</div>
+            <div class="sum-grid" id="roles-summary"></div>
+            <div style="margin-top:10px;font-size:10px;color:#999;font-style:italic;">
+                Role colours: purple = ADMIN &nbsp;|&nbsp; blue = EMPLOYEE &nbsp;|&nbsp; green = USER
+            </div>
+        </div>
+        <div class="page-footer"><span>Education Loan Auth Service · UserRolesReport</span><span id="roles-page">Page 1 of 1</span></div>
+    </div>
+</div>
+
+<script>
+    const BASE = '';
+    const EP = {
+        auth:  BASE + '/api/v1/reports/auth-summary-data',
+        users: BASE + '/api/v1/reports/users-data',
+        roles: BASE + '/api/v1/reports/user-roles-data',
+    };
+
+    function getToken() {
+        return new URLSearchParams(window.location.search).get('token')
+            || localStorage.getItem('token') || localStorage.getItem('jwt')
+            || sessionStorage.getItem('token') || null;
+    }
+    function authHeaders() {
+        const t = getToken(), h = {'Content-Type':'application/json'};
+        if (t) h['Authorization'] = 'Bearer ' + t;
+        return h;
+    }
+
+    let activeTab = 'auth';
+    function switchTab(id, el) {
+        ['auth','users','roles'].forEach(t => {
+            document.getElementById('panel-'+t).classList.remove('active');
+            document.getElementById('tab-'+t).classList.remove('active');
+        });
+        document.getElementById('panel-'+id).classList.add('active');
+        el.classList.add('active');
+        activeTab = id;
+    }
+    function tabLoading(id, on) { document.getElementById('tab-'+id).classList.toggle('loading', on); }
+
+    function nowStr() {
+        return new Date().toLocaleString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    }
+    function fmtDatetime(val) {
+        if (!val) return '—';
+        if (Array.isArray(val)) { const [y,mo,d,h=0,mi=0]=val; return `${pad(d)}-${pad(mo)}-${String(y).slice(-2)} ${pad(h)}:${pad(mi)}`; }
+        try { const dt=new Date(val); if(isNaN(dt))return String(val); return `${pad(dt.getDate())}-${pad(dt.getMonth()+1)}-${String(dt.getFullYear()).slice(-2)} ${pad(dt.getHours())}:${pad(dt.getMinutes())}`; } catch{return String(val);}
+    }
+    function fmtDatetimeFull(val) {
+        if (!val) return '—';
+        if (Array.isArray(val)) { const [y,mo,d,h=0,mi=0,s=0]=val; return `${pad(d)}-${pad(mo)}-${y} ${pad(h)}:${pad(mi)}:${pad(s)}`; }
+        try { const dt=new Date(val); if(isNaN(dt))return String(val); return dt.toISOString().replace('T',' ').slice(0,19); } catch{return String(val);}
+    }
+    function pad(n) { return String(n).padStart(2,'0'); }
+    function bool(obj,...keys) { for(const k of keys){if(obj[k]!==undefined&&obj[k]!==null)return Boolean(obj[k]);}return false; }
+    function skeletonRows(cols,count=5) {
+        return Array.from({length:count},()=>`<tr class="skeleton-row">${Array.from({length:cols},(_,i)=>`<td><span class="skel" style="width:${60+(i%3)*25}px"></span></td>`).join('')}</tr>`).join('');
+    }
+    function showError(msg) {
+        const b=document.getElementById('error-banner');
+        document.getElementById('error-msg').textContent=msg;
+        b.classList.add('show'); setTimeout(()=>b.classList.remove('show'),6000);
+    }
+    function unwrap(data) { if(data&&data.data!==undefined&&data.data!==null)return data.data; return data; }
+    function renderEmpty(tbodyId,cols,msg) {
+        document.getElementById(tbodyId).innerHTML=`<tr class="empty-row"><td colspan="${cols}">${msg||'No data available.'}</td></tr>`;
+    }
+
+    let debugVisible=false, debugSamples={};
+    function toggleDebug() {
+        debugVisible=!debugVisible;
+        document.getElementById('debug-bar').classList.toggle('show',debugVisible);
+        renderDebug();
+    }
+    function renderDebug() {
+        if(!debugVisible)return;
+        document.getElementById('debug-content').textContent=
+            Object.entries(debugSamples).map(([t,r])=>`[${t.toUpperCase()}] fields: ${Object.keys(r).join(' · ')}`).join('\n')||'— load tabs first —';
+    }
+    function setDebugSample(tab,row){debugSamples[tab]=row;renderDebug();}
+
+    /* ── KEY FIX: flexible helper that matches any refresh-related op string ──
+       Covers: REFRESH_TOKEN · REFRESH · TOKEN_REFRESH · REFRESH_ACCESS_TOKEN · etc. */
+    function isRefreshOp(op) { return op.includes('REFRESH'); }
+
+    /* ══════════════════ AUTH ══════════════════ */
+    let allAuthData = [];
+
+    async function loadAuth() {
+        tabLoading('auth',true);
+        document.getElementById('auth-tbody').innerHTML=skeletonRows(9);
+        try {
+            const res=await fetch(EP.auth,{headers:authHeaders()});
+            if(!res.ok){showError(`Auth: HTTP ${res.status}`);renderEmpty('auth-tbody',9);return;}
+            allAuthData=unwrap(await res.json());
+            if(!Array.isArray(allAuthData)||!allAuthData.length){renderEmpty('auth-tbody',9,'No auth log data yet. Login or register first.');return;}
+            setDebugSample('auth',allAuthData[0]);
+
+            /* Show exact operation strings from API — so you can see what REFRESH comes back as */
+            const uniqueOps=[...new Set(allAuthData.map(l=>(l.operation||l.operationType||'?').toUpperCase()))];
+            const dbgEl=document.getElementById('auth-op-debug');
+            if(dbgEl){dbgEl.textContent=`ℹ API operation values: ${uniqueOps.join(' · ')}`;dbgEl.classList.add('show');}
+
+            renderAuth();
+        } catch(e){showError('Auth load failed: '+e.message);renderEmpty('auth-tbody',9);}
+        finally{tabLoading('auth',false);setUpdated();}
+    }
+
+    function renderAuth() {
+        const opF  =document.getElementById('auth-filter-op').value;
+        const stF  =document.getElementById('auth-filter-status').value;
+        const userF=document.getElementById('auth-filter-user').value.trim().toLowerCase();
+
+        const filtered=allAuthData.filter(l=>{
+            const op =(l.operation||l.operationType||'').toUpperCase();
+            const ok =bool(l,'success','isSuccess');
+            const usr=(l.username||'').toLowerCase();
+
+            /* ✅ FIXED REFRESH TOKEN FILTER
+               OLD: op.includes(opF)  — failed when API returns 'REFRESH' but opF='REFRESH_TOKEN'
+               NEW: per-case matching — REGISTER/LOGIN exact; REFRESH catches any op with 'REFRESH' */
+            if (opF !== 'ALL') {
+                if      (opF === 'REFRESH_TOKEN') { if (!isRefreshOp(op))  return false; }
+                else if (opF === 'REGISTER')      { if (op !== 'REGISTER') return false; }
+                else if (opF === 'LOGIN')         { if (op !== 'LOGIN')    return false; }
+            }
+
+            if (stF==='SUCCESS'&&!ok) return false;
+            if (stF==='FAILED' && ok) return false;
+            if (userF&&!usr.includes(userF)) return false;
+            return true;
+        });
+
+        const tbody=document.getElementById('auth-tbody');
+        if(!filtered.length){renderEmpty('auth-tbody',9,'No records match the selected filters.');}
+        else {
+            tbody.innerHTML=filtered.map(l=>{
+                const op=(l.operation||l.operationType||'').toUpperCase();
+                const opBadge=op==='LOGIN'   ?`<span class="badge b-login">LOGIN</span>`
+                            :op==='REGISTER'?`<span class="badge b-register">REGISTER</span>`
+                            :isRefreshOp(op)?`<span class="badge b-refresh">REFRESH TOKEN</span>`
+                            :op             ?`<span class="badge b-refresh">${op}</span>`:'—';
+                const ok=bool(l,'success','isSuccess');
+                const stBadge=ok?`<span class="badge b-success">SUCCESS</span>`:`<span class="badge b-failed">FAILED</span>`;
+                return `<tr>
+                    <td>${l.username||'—'}</td><td>${opBadge}</td><td>${stBadge}</td>
+                    <td>${l.tokenType||'Bearer'}</td>
+                    <td>${l.accessExpiresAt ?fmtDatetimeFull(l.accessExpiresAt) :'—'}</td>
+                    <td>${l.refreshExpiresAt?fmtDatetimeFull(l.refreshExpiresAt):'—'}</td>
+                    <td>${l.accessExpiresInSeconds ??l.accessExpiry ??'—'}</td>
+                    <td>${l.refreshExpiresInSeconds??l.refreshExpiry??'—'}</td>
+                    <td>${fmtDatetime(l.timestamp||l.createdAt)}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        const total    =filtered.length;
+        const success  =filtered.filter(l=>bool(l,'success','isSuccess')).length;
+        const registers=filtered.filter(l=>(l.operation||l.operationType||'').toUpperCase()==='REGISTER').length;
+        const logins   =filtered.filter(l=>(l.operation||l.operationType||'').toUpperCase()==='LOGIN').length;
+        const refreshes=filtered.filter(l=>isRefreshOp((l.operation||l.operationType||'').toUpperCase())).length;
+        const rate     =total?((success/total)*100).toFixed(1)+'%':'—';
+
+        document.getElementById('auth-summary').innerHTML=`
+            <div class="sum-item"><div class="sum-label">Total Ops</div><div class="sum-value">${total}</div></div>
+            <div class="sum-item"><div class="sum-label">Registers</div><div class="sum-value" style="color:#1565C0">${registers}</div></div>
+            <div class="sum-item"><div class="sum-label">Logins</div><div class="sum-value" style="color:#1B5E20">${logins}</div></div>
+            <div class="sum-item"><div class="sum-label">Token Refresh</div><div class="sum-value" style="color:#BF360C">${refreshes}</div></div>
+            <div class="sum-item"><div class="sum-label">Successful</div><div class="sum-value" style="color:#2E7D32">${success}</div></div>
+            <div class="sum-item"><div class="sum-label">Failed</div><div class="sum-value" style="color:#C62828">${total-success}</div></div>
+            <div class="sum-item"><div class="sum-label">Success Rate</div><div class="sum-value" style="color:#1B5E20">${rate}</div></div>`;
+        document.getElementById('auth-generated-at').textContent='Generated: '+nowStr();
+        document.getElementById('auth-page').textContent=`Page 1 of 1  (${total} records)`;
+        document.getElementById('auth-filter-count').textContent=total<allAuthData.length?`Showing ${total} of ${allAuthData.length} records`:`${total} records`;
+        document.getElementById('auth-gen-info').textContent=`${total} record(s) · Op=${opF}, Status=${stF}${userF?', User='+userF:''}`;
+    }
+
+    function clearAuthFilters(){
+        document.getElementById('auth-filter-op').value='ALL';
+        document.getElementById('auth-filter-status').value='ALL';
+        document.getElementById('auth-filter-user').value='';
+        renderAuth();
+    }
+
+    /* ══════════════════ USERS ══════════════════ */
+    let allUsersData=[];
+    async function loadUsers(){
+        tabLoading('users',true);
+        document.getElementById('users-tbody').innerHTML=skeletonRows(8);
+        try{
+            const res=await fetch(EP.users,{headers:authHeaders()});
+            if(!res.ok){showError(`Users: HTTP ${res.status}`);renderEmpty('users-tbody',8);return;}
+            allUsersData=unwrap(await res.json());
+            if(!Array.isArray(allUsersData)||!allUsersData.length){renderEmpty('users-tbody',8,'No users found.');return;}
+            setDebugSample('users',allUsersData[0]);
+            renderUsers();
+        }catch(e){showError('Users load failed: '+e.message);renderEmpty('users-tbody',8);}
+        finally{tabLoading('users',false);setUpdated();}
+    }
+    function renderUsers(){
+        const aF=document.getElementById('users-filter-active').value;
+        const vF=document.getElementById('users-filter-verified').value;
+        const sF=document.getElementById('users-filter-search').value.trim().toLowerCase();
+        const filtered=allUsersData.filter(u=>{
+            const isA=bool(u,'active','isActive'), isV=bool(u,'emailVerified','isEmailVerified');
+            const h=[u.username,u.firstName,u.lastName,u.email,u.first_name,u.last_name].filter(Boolean).join(' ').toLowerCase();
+            if(aF==='YES'&&!isA)return false; if(aF==='NO'&&isA)return false;
+            if(vF==='VERIFIED'&&!isV)return false; if(vF==='PENDING'&&isV)return false;
+            if(sF&&!h.includes(sF))return false;
+            return true;
+        });
+        const tbody=document.getElementById('users-tbody');
+        if(!filtered.length){renderEmpty('users-tbody',8,'No records match the selected filters.');}
+        else{
+            tbody.innerHTML=filtered.map(u=>{
+                const isA=bool(u,'active','isActive'),isV=bool(u,'emailVerified','isEmailVerified');
+                return `<tr><td>${u.id??'—'}</td><td>${u.username||'—'}</td><td>${u.firstName||u.first_name||'—'}</td><td>${u.lastName||u.last_name||'—'}</td><td>${u.email||'—'}</td>
+                    <td>${isA?'<span class="badge b-active">YES</span>':'<span class="badge b-inactive">NO</span>'}</td>
+                    <td>${isV?'<span class="badge b-verified">VERIFIED</span>':'<span class="badge b-pending">PENDING</span>'}</td>
+                    <td>${fmtDatetimeFull(u.createdAt||u.created_at)}</td></tr>`;
+            }).join('');
+        }
+        const total=filtered.length,active=filtered.filter(u=>bool(u,'active','isActive')).length,verified=filtered.filter(u=>bool(u,'emailVerified','isEmailVerified')).length;
+        document.getElementById('users-summary').innerHTML=`
+            <div class="sum-item"><div class="sum-label">Total Users</div><div class="sum-value">${total}</div></div>
+            <div class="sum-item"><div class="sum-label">Active</div><div class="sum-value" style="color:#2E7D32">${active}</div></div>
+            <div class="sum-item"><div class="sum-label">Inactive</div><div class="sum-value" style="color:#C62828">${total-active}</div></div>
+            <div class="sum-item"><div class="sum-label">Email Verified</div><div class="sum-value" style="color:#1565C0">${verified}</div></div>
+            <div class="sum-item"><div class="sum-label">Pending Verification</div><div class="sum-value" style="color:#E65100">${total-verified}</div></div>`;
+        document.getElementById('users-generated-at').textContent='Generated: '+nowStr();
+        document.getElementById('users-page').textContent=`Page 1 of 1  (${total} records)`;
+        document.getElementById('users-filter-count').textContent=total<allUsersData.length?`Showing ${total} of ${allUsersData.length} records`:`${total} records`;
+        document.getElementById('users-gen-info').textContent=`${total} record(s) · Active=${aF}, Verified=${vF}${sF?', Search='+sF:''}`;
+    }
+    function clearUsersFilters(){
+        document.getElementById('users-filter-active').value='ALL';
+        document.getElementById('users-filter-verified').value='ALL';
+        document.getElementById('users-filter-search').value='';
+        renderUsers();
+    }
+
+    /* ══════════════════ ROLES ══════════════════ */
+    let allRolesData=[];
+    async function loadRoles(){
+        tabLoading('roles',true);
+        document.getElementById('roles-tbody').innerHTML=skeletonRows(10);
+        try{
+            const res=await fetch(EP.roles,{headers:authHeaders()});
+            if(!res.ok){showError(`Roles: HTTP ${res.status}`);renderEmpty('roles-tbody',10);return;}
+            allRolesData=unwrap(await res.json());
+            if(!Array.isArray(allRolesData)||!allRolesData.length){renderEmpty('roles-tbody',10,'No role assignments found.');return;}
+            setDebugSample('roles',allRolesData[0]);
+            const uq=[...new Set(allRolesData.map(r=>r.roleName||r.role_name||r.name||'?'))];
+            const dbg=document.getElementById('role-names-debug');
+            if(dbg)dbg.textContent=`API values: ${uq.join(', ')}`;
+            renderRoles();
+        }catch(e){showError('Roles load failed: '+e.message);renderEmpty('roles-tbody',10);}
+        finally{tabLoading('roles',false);setUpdated();}
+    }
+    function renderRoles(){
+        const filter=document.getElementById('role-filter').value;
+        const sF=document.getElementById('roles-filter-search').value.trim().toLowerCase();
+        const tbody=document.getElementById('roles-tbody');
+        const filtered=allRolesData.filter(r=>{
+            const rn=(r.roleName||r.role_name||r.name||'').toUpperCase();
+            const f=filter.replace('ROLE_','').toUpperCase();
+            const rm=filter==='ALL'||rn===filter.toUpperCase()||rn===f||rn.includes(f)||f.includes(rn);
+            const h=[r.username,r.email,r.firstName,r.lastName,r.first_name,r.last_name].filter(Boolean).join(' ').toLowerCase();
+            return rm&&(!sF||h.includes(sF));
+        });
+        document.getElementById('roles-meta-left').textContent=`Generated by: System  |  Role filter: ${filter}`;
+        if(!filtered.length){renderEmpty('roles-tbody',10,'No records found for current filters.');}
+        else{
+            tbody.innerHTML=filtered.map(r=>{
+                const rn=(r.roleName||r.role_name||r.name||'').toUpperCase();
+                const cls=rn.includes('ADMIN')?'b-admin':rn.includes('EMPLOYEE')?'b-employee':'b-user';
+                return `<tr><td>${r.id??'—'}</td><td>${r.userId??r.user_id??'—'}</td><td>${r.username||'—'}</td><td>${r.firstName||r.first_name||'—'}</td><td>${r.lastName||r.last_name||'—'}</td><td>${r.email||'—'}</td><td>${r.roleId??r.role_id??'—'}</td><td><span class="badge ${cls}">${r.roleName||r.name||'—'}</span></td><td>${r.assignedBy||r.assigned_by||'—'}</td><td>${fmtDatetime(r.assignedAt||r.assigned_at)}</td></tr>`;
+            }).join('');
+        }
+        const total=filtered.length;
+        const admins   =filtered.filter(r=>(r.roleName||r.name||'').toUpperCase().includes('ADMIN')).length;
+        const employees=filtered.filter(r=>(r.roleName||r.name||'').toUpperCase().includes('EMPLOYEE')).length;
+        const users    =filtered.filter(r=>{const n=(r.roleName||r.name||'').toUpperCase();return n.includes('USER')&&!n.includes('ADMIN')&&!n.includes('EMPLOYEE');}).length;
+        document.getElementById('roles-summary').innerHTML=`
+            <div class="sum-item"><div class="sum-label">Total Assignments</div><div class="sum-value">${total}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#7B1FA2">ADMIN</div><div class="sum-value" style="color:#7B1FA2">${admins}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#1565C0">EMPLOYEE</div><div class="sum-value" style="color:#1565C0">${employees}</div></div>
+            <div class="sum-item"><div class="sum-label" style="color:#2E7D32">USER</div><div class="sum-value" style="color:#2E7D32">${users}</div></div>`;
+        document.getElementById('roles-generated-at').textContent='Generated: '+nowStr();
+        document.getElementById('roles-page').textContent=`Page 1 of 1  (${total} records)`;
+        document.getElementById('roles-filter-count').textContent=total<allRolesData.length?`Showing ${total} of ${allRolesData.length}`:`${total} records`;
+        document.getElementById('roles-gen-info').textContent=`${total} record(s) · Role=${filter}${sF?', Search='+sF:''}`;
+    }
+    function clearRolesFilters(){
+        document.getElementById('role-filter').value='ALL';
+        document.getElementById('roles-filter-search').value='';
+        renderRoles();
+    }
+
+    /* ══════════════════ GENERATE REPORT ══════════════════ */
+    function dateSuffix(){const d=new Date();return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}`;}
+
+    function generateReport(tab){
+        const cfg={
+            auth: {title:'Education Loan – Auth Operations Report',subtitle:'Auth Service – /api/v1/auth',color:'#AD1457',
+                   thead:['Username','Operation','Status','Token Type','Access Expires At','Refresh Expires At','Acc Exp(s)','Ref Exp(s)','Timestamp'],
+                   tbodyId:'auth-tbody',summaryId:'auth-summary',filename:`auth-report-${dateSuffix()}.html`},
+            users:{title:'Education Loan – User List Report',subtitle:'Auth Service – /api/v1/users',color:'#1565C0',
+                   thead:['User ID','Username','First Name','Last Name','Email','Active','Email Verified','Created At'],
+                   tbodyId:'users-tbody',summaryId:'users-summary',filename:`users-report-${dateSuffix()}.html`},
+            roles:{title:'Education Loan – User Roles Assignment Report',subtitle:'Auth Service – /api/v1/user_roles',color:'#00695C',
+                   thead:['UR ID','User ID','Username','First Name','Last Name','Email','Role ID','Role Name','Assigned By','Assigned At'],
+                   tbodyId:'roles-tbody',summaryId:'roles-summary',filename:`roles-report-${dateSuffix()}.html`}
+        }[tab];
+
+        const filterInfo =document.getElementById(tab+'-gen-info').textContent;
+        const rows       =[...document.querySelectorAll(`#${cfg.tbodyId} tr:not(.skeleton-row):not(.empty-row)`)].map(tr=>[...tr.querySelectorAll('td')].map(td=>td.innerHTML).join('</td><td>'));
+        const summaryHTML=document.getElementById(cfg.summaryId).innerHTML;
+        const genAt      =nowStr();
+
+        const html=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><title>${cfg.title}</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;font-size:11px;color:#1a1a1a;background:#fff;padding:24px;}
+.hdr{background:${cfg.color};color:#fff;padding:16px 20px;border-radius:4px 4px 0 0;}
+.hdr h1{font-size:16px;font-weight:900;margin-bottom:4px;}.hdr p{font-size:10px;opacity:.8;}
+.meta{display:flex;justify-content:space-between;font-size:9px;opacity:.75;padding-top:8px;margin-top:8px;border-top:1px solid rgba(255,255,255,.3);flex-wrap:wrap;gap:4px;}
+table{width:100%;border-collapse:collapse;}
+thead th{background:${cfg.color};color:#fff;padding:7px 8px;text-align:left;font-size:10px;white-space:nowrap;}
+tbody tr:nth-child(odd){background:#fff;}tbody tr:nth-child(even){background:#f5f5f5;}
+td{padding:6px 8px;border-bottom:1px solid #e0e0e0;font-size:10px;vertical-align:middle;white-space:nowrap;}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;color:#fff;font-family:monospace;}
+.b-register{background:#1976D2;}.b-login{background:#2E7D32;}.b-refresh{background:#E65100;}
+.b-success{background:#2E7D32;}.b-failed{background:#C62828;}
+.b-active{background:#C8E6C9;color:#1B5E20;border:1px solid #81C784;}
+.b-inactive{background:#FFCDD2;color:#B71C1C;border:1px solid #EF9A9A;}
+.b-verified{background:#C8E6C9;color:#1B5E20;border:1px solid #81C784;}
+.b-pending{background:#FFF9C4;color:#F57F17;border:1px solid #F9A825;}
+.b-admin{background:#7B1FA2;}.b-employee{background:#1565C0;}.b-user{background:#2E7D32;}
+.summary-wrap{padding:16px 28px;background:#f8f8f8;border-top:3px solid ${cfg.color};}
+.summary-title{font-size:12px;font-weight:700;color:${cfg.color};margin-bottom:10px;}
+.sum-grid{display:flex;gap:32px;flex-wrap:wrap;}
+.sum-item{display:flex;flex-direction:column;gap:2px;}
+.sum-label{font-size:10px;color:#777;}
+.sum-value{font-size:16px;font-weight:900;font-family:monospace;}
+.page-footer{display:flex;justify-content:space-between;padding:8px 28px;background:#f0f0f0;border-top:1px solid #ddd;font-size:9px;color:#999;}
+@media print{body{padding:0;}}
+</style></head><body>
+<div class="hdr"><h1>${cfg.title}</h1><p>${cfg.subtitle}</p>
+  <div class="meta"><span>Generated by: System &nbsp;|&nbsp; ${filterInfo}</span><span>Generated: ${genAt}</span></div>
+</div>
+<table>
+  <thead><tr><th>${cfg.thead.join('</th><th>')}</th></tr></thead>
+  <tbody>${rows.length?rows.map(r=>`<tr><td>${r}</td></tr>`).join(''):`<tr><td colspan="${cfg.thead.length}" style="text-align:center;padding:20px;color:#aaa;font-style:italic;">No records</td></tr>`}</tbody>
+</table>
+<div class="summary-wrap">
+  <div class="summary-title">Report Summary</div>
+  <div class="sum-grid">${summaryHTML}</div>
+</div>
+<div class="page-footer"><span>Education Loan Auth Service</span><span>${rows.length} record(s) &nbsp;|&nbsp; ${genAt}</span></div>
+</body></html>`;
+
+        const blob=new Blob([html],{type:'text/html'});
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(blob); a.download=cfg.filename; a.click();
+        URL.revokeObjectURL(a.href);
+    }
+
+    function refreshAll(){
+        const btn=document.getElementById('refresh-btn');
+        btn.disabled=true;btn.textContent='↺ Loading...';
+        Promise.all([loadAuth(),loadUsers(),loadRoles()]).finally(()=>{btn.disabled=false;btn.textContent='↺ Refresh All';});
+    }
+    function setUpdated(){document.getElementById('last-updated').textContent='Last updated: '+nowStr();}
+
+    Promise.all([loadAuth(),loadUsers(),loadRoles()]);
+</script>
+</body>
+</html>

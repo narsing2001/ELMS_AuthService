@@ -47,6 +47,9 @@ public class SecurityConfig {
                         .requestMatchers("/report.html").permitAll()
                         .requestMatchers("/report-preview.html").permitAll()
                         .requestMatchers("/report-all.html").permitAll()
+                        .requestMatchers("/report-all1.html").permitAll()
+                        .requestMatchers("/report-all2.html").permitAll()
+                        .requestMatchers("/report-all3.html").permitAll()
                         .requestMatchers(
                                 "/LoginRegister.html",
                                 "/Report-API.html",

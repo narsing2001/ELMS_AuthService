@@ -211,7 +211,7 @@
             <button class="tab-btn"        id="tab-register" onclick="switchTab('register')">Register</button>
         </div>
 
-        <!----------LOGIN PANEL -------------->
+        <!-- LOGIN PANEL -->
         <div class="panel active" id="panel-login">
             <div class="alert alert-error" id="login-error">
                 <span class="alert-icon">⚠</span><span id="login-error-msg"></span>
@@ -237,7 +237,7 @@
             </div>
         </div>
 
-        <!--------REGISTER PANEL ------------>
+        <!-- REGISTER PANEL -->
         <div class="panel" id="panel-register">
             <div class="alert alert-error" id="reg-error">
                 <span class="alert-icon">⚠</span><span id="reg-error-msg"></span>
@@ -293,7 +293,7 @@
             </div>
         </div>
 
-        <!----------------SUCCESS SCREEN----------------------->
+        <!-- SUCCESS SCREEN -->
         <div class="success-screen" id="success-screen">
             <span class="success-check">🎉</span>
             <h2>Account Created!</h2>
@@ -306,16 +306,14 @@
 
 <script>
 
-<!-----------configuration----------------------------->
     const BASE_URL = '';
 
-<!--Change these if your AuthDTO uses different field names-------------------------------------->
-<!--Your API returns: { "success": true, "message": "...", "data": { "accessToken": "...", "refreshToken": "..." } }-->
-<!--payload = data.data  ← this unwraps the ApiResponse wrapper--------------->
+    // Token field names (must match your API response)
+    // Response shape: { success, message, data: { accessToken, refreshToken, ... } }
     const TOKEN_FIELD   = 'accessToken';
     const REFRESH_FIELD = 'refreshToken';
 
-<!-----------------tab switching---------------------------->
+    // ── Tab switching ─────────────────────────────────────────────────────────
     function switchTab(tab) {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
@@ -329,7 +327,7 @@
         document.querySelectorAll('.alert').forEach(a => a.classList.remove('show'));
     }
 
-<!------------password toggle----------------->
+
     function togglePw(inputId, btn) {
         const input = document.getElementById(inputId);
         const isText = input.type === 'text';
@@ -337,7 +335,7 @@
         btn.textContent = isText ? '👁' : '🙈';
     }
 
-<!-----------------password strength---------------------->
+
     function checkPwStrength(val) {
         const hint = document.getElementById('pw-hint');
         if (!val) { hint.textContent = 'At least 8 characters'; hint.className = 'hint'; return; }
@@ -346,7 +344,7 @@
         hint.textContent = '✓ Strong password'; hint.className = 'hint'; hint.style.color = '#a5d6a7';
     }
 
-<!----------------alert messages---------------------------->
+
     function showError(prefix, msg) {
         document.getElementById(prefix + '-error-msg').textContent = msg;
         document.getElementById(prefix + '-error').classList.add('show');
@@ -356,14 +354,14 @@
         document.getElementById(prefix + '-success').classList.add('show');
     }
 
- button loading
+
     function setLoading(btnId, loading, label) {
         const btn = document.getElementById(btnId);
         btn.disabled = loading;
         btn.innerHTML = loading ? `<span class="spinner"></span> Please wait...` : label;
     }
 
-<!-----------login--------------------->
+
     async function doLogin() {
         clearAlerts();
         const username = document.getElementById('login-username').value.trim();
@@ -382,7 +380,6 @@
             });
 
             const data = await res.json();
-            // Your response shape: { success, message, data: { accessToken, refreshToken, ... } }
             const payload = (data.data && typeof data.data === 'object') ? data.data : data;
 
             if (res.ok && payload[TOKEN_FIELD]) {
@@ -401,7 +398,7 @@
         }
     }
 
-<!------------------------register-------------------------->
+
     async function doRegister() {
         clearAlerts();
         const firstName = document.getElementById('reg-firstname').value.trim();
@@ -460,14 +457,14 @@
         }
     }
 
-<!--------------------login key------------------------------>
+
     document.addEventListener('keydown', function(e) {
         if (e.key !== 'Enter') return;
         if (document.getElementById('panel-login').classList.contains('active'))    doLogin();
         if (document.getElementById('panel-register').classList.contains('active')) doRegister();
     });
 
-<!----------------auto redirect if already logged in------------------>
+
     (function() {
         if (localStorage.getItem('token')) {
             window.location.href = '/index.html';
