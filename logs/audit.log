@@ -67,3 +67,6 @@
 2026-03-13 13:24:34 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/users-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=772ms
 2026-03-13 13:24:41 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/user-roles-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=184ms
 2026-03-13 13:24:41 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/users-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=193ms
+2026-03-13 14:27:32 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/auth-summary-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=196ms
+2026-03-13 14:27:33 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/user-roles-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=418ms
+2026-03-13 14:27:33 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/users-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=447ms

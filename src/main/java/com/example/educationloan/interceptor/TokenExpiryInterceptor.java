@@ -9,8 +9,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import java.io.IOException;
 import java.util.Date;
-
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -20,11 +18,14 @@ public class TokenExpiryInterceptor implements HandlerInterceptor {
     private static final long TOKEN_EXPIRY_WARNING_MS = 10 * 60 * 1000;
 
 
-    private static final String[] PUBLIC_URLS = {"/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh"};
+    private static final String[] PUBLIC_URLS = {
+                              "/api/v1/auth/login",
+                              "/api/v1/auth/register",
+                               "/api/v1/auth/refresh"
+              };
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
-
         String uri = request.getRequestURI();
         for (String publicUrl : PUBLIC_URLS) {
             if (uri.startsWith(publicUrl)) {

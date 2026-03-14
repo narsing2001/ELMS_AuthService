@@ -18,22 +18,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
-
-/**
- * ReportController
- *
- * Exposes PDF download endpoints for all three Jasper reports.
- *
- * Endpoints:
- *   GET /api/v1/reports/users                   → UserListReport.pdf
- *   GET /api/v1/reports/user-roles              → UserRolesReport.pdf
- *   GET /api/v1/reports/auth-summary            → AuthSummaryReport.pdf
- */
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/reports")
@@ -45,32 +33,18 @@ public class ReportController {
     private final UserRoleService     userRoleService;
     private final AuthService authService;   // ← real auth logs
     private final AuthLogStore authLogStore;
+    private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    private static final DateTimeFormatter DATE_FMT =
-            DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
-    // ── 1. User List ─────────────────────────────────────────────────────────
-    /**
-     * GET /api/v1/reports/users
-     * Downloads a PDF listing every registered user with status & timestamps.
-     */
+    // ── 1. User List ──────────────────────────────────────────────────────
     @GetMapping("/users")
-    public ResponseEntity<byte[]> downloadUserListReport(
-            @RequestParam(defaultValue = "System") String generatedBy) {
-
+    public ResponseEntity<byte[]> downloadUserListReport(@RequestParam(defaultValue = "ADMIN") String generatedBy) {
         log.info("REQUEST  : GET /api/v1/reports/users | generatedBy={}", generatedBy);
-
         try {
             List<User>    users    = userService.getAllUsers();
-            List<UserDTO> userDTOs = users.stream()
-                                         .map(UserDTO::toUserDTO)
-                                         .collect(Collectors.toList());
-
+            List<UserDTO> userDTOs = users.stream().map(UserDTO::toUserDTO).collect(Collectors.toList());
             byte[] pdf = reportService.generateUserListReport(userDTOs, generatedBy);
-
             log.info("RESPONSE : 200 OK | UserListReport generated | records={}", userDTOs.size());
             return pdfResponse(pdf, "UserListReport.pdf");
-
         } catch (Exception e) {
             log.error("ERROR generating UserListReport: {}", e.getMessage(), e);
             return ResponseEntity.internalServerError().build();
@@ -78,11 +52,6 @@ public class ReportController {
     }
 
     // ── 2. User-Roles ────────────────────────────────────────────────────────
-    /**
-     * GET /api/v1/reports/user-roles?roleFilter=ADMIN
-     * Downloads a PDF of all user ↔ role mappings.
-     * Optional ?roleFilter= to show the active filter in the report header.
-     */
     @GetMapping("/user-roles")
     public ResponseEntity<byte[]> downloadUserRolesReport(
             @RequestParam(defaultValue = "System") String generatedBy,
@@ -92,8 +61,6 @@ public class ReportController {
 
         try {
             List<UserRole> userRoles = userRoleService.getAllUserRoles();
-
-            // Build flat DTO list matching JRXML field names
             List<UserRoleReportRow> rows = userRoles.stream()
                     .filter(ur -> "ALL".equalsIgnoreCase(roleFilter)
                                   || ur.getRole().getName().name().equalsIgnoreCase(roleFilter))
@@ -111,56 +78,26 @@ public class ReportController {
                             .assignedAt(ur.getAssignedAt())
                             .build())
                     .collect(Collectors.toList());
-
             byte[] pdf = reportService.generateUserRolesReport(rows, generatedBy, roleFilter);
-
             log.info("RESPONSE : 200 OK | UserRolesReport generated | records={}", rows.size());
             return pdfResponse(pdf, "UserRolesReport.pdf");
-
         } catch (Exception e) {
             log.error("ERROR generating UserRolesReport: {}", e.getMessage(), e);
             return ResponseEntity.internalServerError().build();
         }
     }
 
-    // ── 3. Auth Summary ──────────────────────────────────────────────────────
-    // ── Helper ───────────────────────────────────────────────────────────────
 
-    /**
-     * GET /api/v1/reports/auth-summary?fromDate=01-01-2025&toDate=31-12-2025
-     *
-     * NOTE: This report requires an AuthLog persistence layer.
-     * If you don't have one yet, inject your AuthLogService here and replace
-     * the placeholder list below.
-     *
-     * The AuthLogDTO must expose the fields listed in JasperReportService.
-     */
     @GetMapping("/auth-summary")
     public ResponseEntity<byte[]> downloadAuthSummaryReport(
             @RequestParam(defaultValue = "System") String generatedBy,
             @RequestParam(defaultValue = "–")      String fromDate,
             @RequestParam(defaultValue = "–")      String toDate) {
-
         log.info("REQUEST  : GET /api/v1/reports/auth-summary | generatedBy={} from={} to={}",
                 generatedBy, fromDate, toDate);
-
         try {
-            /*
-             * TODO: Replace with real auth-log data.
-             *
-             * Example (once you have an AuthLogService):
-             *   List<AuthLogDTO> logs = authLogService.findByDateRange(fromDate, toDate);
-             *
-             * For now we pass an empty list so the report renders with
-             * the summary section showing zeros.
-             */
-            // List<?> authLogs = List.of();
-          //  List<AuthLogDTO> authLogs = authService.getAuthLogs();  // ← real data
             List<AuthLogDTO> authLogs = authLogStore.getAll();
-
-            byte[] pdf = reportService.generateAuthSummaryReport(
-                    authLogs, generatedBy, fromDate, toDate);
-
+            byte[] pdf = reportService.generateAuthSummaryReport(authLogs, generatedBy, fromDate, toDate);
             log.info("RESPONSE : 200 OK | AuthSummaryReport generated | records={}", authLogs.size());
             return pdfResponse(pdf, "AuthSummaryReport.pdf");
 
@@ -172,13 +109,12 @@ public class ReportController {
     private ResponseEntity<byte[]> pdfResponse(byte[] pdf, String filename) {
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
-                .header(HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=\"" + filename + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
                 .header(HttpHeaders.CONTENT_LENGTH, String.valueOf(pdf.length))
                 .body(pdf);
     }
 
-    // ReportController.java — add these three endpoints
+
 
 // ── JSON for live HTML preview ────────────────────────────────────────────
 

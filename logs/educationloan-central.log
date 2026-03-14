@@ -2849,3 +2849,170 @@
 2026-03-13 13:27:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-13 13:27:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-03-13 13:27:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-13 14:27:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-13 14:27:02 [main] INFO  c.e.e.EducationloanApplication - Starting EducationloanApplication using Java 23.0.2 with PID 11808 (D:\educationloan\target\classes started by Narsing Patil in D:\educationloan)
+2026-03-13 14:27:02 [main] DEBUG c.e.e.EducationloanApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-03-13 14:27:02 [main] INFO  c.e.e.EducationloanApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-13 14:27:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13 14:27:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+2026-03-13 14:27:07 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-13 14:27:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-13 14:27:07 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-13 14:27:07 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-13 14:27:07 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4112 ms
+2026-03-13 14:27:07 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13 14:27:08 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-13 14:27:08 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13 14:27:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-13 14:27:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@51aa2a58
+2026-03-13 14:27:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-13 14:27:08 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-13 14:27:09 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13 14:27:10 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13 14:27:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13 14:27:10 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13 14:27:12 [main] DEBUG c.e.e.security.jwt.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 14:27:12 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 14:27:12 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-03-13 14:27:12 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-13 14:27:12 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-03-13 14:27:13 [main] INFO  o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-13 14:27:13 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 5 endpoints beneath base path '/actuator'
+2026-03-13 14:27:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-13 14:27:14 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-13 14:27:14 [main] INFO  c.e.e.EducationloanApplication - Started EducationloanApplication in 12.391 seconds (process running for 14.728)
+2026-03-13 14:27:14 [main] INFO  c.e.e.config.RoleInitializer - Available roles are loading in roles database..................................................
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] DEBUG org.hibernate.SQL - /* SELECT r FROM Role r WHERE r.name = :name */ select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-03-13 14:27:14 [main] INFO  c.e.e.config.RoleInitializer - all Available roles are Successfully loaded in the roles database...............................!!!
+2026-03-13 14:27:30 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13 14:27:30 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-13 14:27:30 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-03-13 14:27:31 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /report-all3.html
+2026-03-13 14:27:31 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-03-13 14:27:31 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /report-all3.html
+2026-03-13 14:27:31 [http-nio-8080-exec-1] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-13 14:27:31 [http-nio-8080-exec-1] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-13 14:27:31 [http-nio-8080-exec-1] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 288ms | Status: 200
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/reports/auth-summary-data
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/reports/users-data
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/reports/user-roles-data
+2026-03-13 14:27:32 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2026-03-13 14:27:32 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-03-13 14:27:32 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /favicon.ico
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - /* SELECT u FROM User u WHERE u.username = :username */ select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - /* SELECT u FROM User u WHERE u.username = :username */ select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - /* SELECT u FROM User u WHERE u.username = :username */ select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG c.e.e.s.jwt.CustomUserDetailsService - Loaded user 'narsing_patil_5051' with roles: [ROLE_USER]
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG c.e.e.s.jwt.CustomUserDetailsService - Loaded user 'narsing_patil_5051' with roles: [ROLE_USER]
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG c.e.e.s.jwt.CustomUserDetailsService - Loaded user 'narsing_patil_5051' with roles: [ROLE_USER]
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG c.e.e.security.jwt.JwtAuthFilter - Authenticated user 'narsing_patil_5051' for request: /api/v1/reports/users-data
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG c.e.e.security.jwt.JwtAuthFilter - Authenticated user 'narsing_patil_5051' for request: /api/v1/reports/user-roles-data
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/reports/user-roles-data
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/reports/users-data
+2026-03-13 14:27:32 [http-nio-8080-exec-4] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-13 14:27:32 [http-nio-8080-exec-9] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG c.e.e.security.jwt.JwtAuthFilter - Authenticated user 'narsing_patil_5051' for request: /api/v1/reports/auth-summary-data
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/reports/auth-summary-data
+2026-03-13 14:27:32 [http-nio-8080-exec-5] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-13 14:27:32 [http-nio-8080-exec-9] DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 14:27:32 [http-nio-8080-exec-5] DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 3
+2026-03-13 14:27:32 [http-nio-8080-exec-4] DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 14:27:32 [http-nio-8080-exec-5] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-13 14:27:32 [http-nio-8080-exec-5] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/auth-summary-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=196ms
+2026-03-13 14:27:32 [http-nio-8080-exec-5] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 278ms | Status: 200
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - /* <criteria> */ select ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,ur1_0.user_id from user_roles ur1_0
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - /* <criteria> */ select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id from user_roles ur1_0 where ur1_0.user_id=?
+2026-03-13 14:27:33 [http-nio-8080-exec-4] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-13 14:27:33 [http-nio-8080-exec-4] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/user-roles-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=418ms
+2026-03-13 14:27:33 [http-nio-8080-exec-4] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 524ms | Status: 200
+2026-03-13 14:27:33 [http-nio-8080-exec-9] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-13 14:27:33 [http-nio-8080-exec-9] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=narsing_patil_5051 | GET /api/v1/reports/users-data | IP=0:0:0:0:0:0:0:1 | status=200 | time=447ms
+2026-03-13 14:27:33 [http-nio-8080-exec-9] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 547ms | Status: 200
+2026-03-13 14:28:45 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13 14:28:45 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-13 14:28:45 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13 14:28:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-13 14:28:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

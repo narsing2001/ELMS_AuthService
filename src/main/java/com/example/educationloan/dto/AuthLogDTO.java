@@ -7,17 +7,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
 
-// AuthLogDTO.java
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthLogDTO {
     private String        username;
-    private String        operation;          // "REGISTER", "LOGIN", "REFRESH_TOKEN"
+    private String        operation;
     private String        tokenType;
     private String        accessExpiresAt;
     private String        refreshExpiresAt;

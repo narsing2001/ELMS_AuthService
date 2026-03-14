@@ -13,8 +13,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class RoleInitializer implements CommandLineRunner {
 
-
-
     private final RoleService roleService;
     @Override
     public void run(String... args) {

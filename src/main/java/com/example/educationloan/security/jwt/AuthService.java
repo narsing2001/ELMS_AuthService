@@ -33,15 +33,10 @@ public class AuthService implements AuthInterface {
     private final CustomUserDetailsService userDetailsService;
     private final UserService              userService;
     private final AuthLogStore authLogStore;
-    // ── In-memory auth log (persists while app is running) ───────────────────
+    //In-memory auth log (persists while app is running)
     private final List<AuthLogDTO> authLogs = Collections.synchronizedList(new ArrayList<>());
 
-    // ── Expose logs to ReportController ──────────────────────────────────────
-//    public List<AuthLogDTO> getAuthLogs() {
-//        return authLogs;
-//    }
-
-    // ── helper: build AuthLogDTO and store it ─────────────────────────────────
+    // build AuthLogDTO and store it
     private void saveLog(AuthDTO response, String operation, boolean success) {
         authLogStore.add(AuthLogDTO.builder()
                 .username(response.getUsername())
@@ -58,10 +53,7 @@ public class AuthService implements AuthInterface {
                 .build());
     }
 
-
-
-
-    // ── helper: convert token → AuthDTO with expiry fields ───────────────────
+    // convert token → AuthDTO with expiry fields
     private AuthDTO buildAuthDTO(String accessToken, String refreshToken, String username) {
 
         // 1. extract expiry Date directly from JWT claims
@@ -69,10 +61,8 @@ public class AuthService implements AuthInterface {
         Date refreshExpDate = jwtTokenProvider.extractExpiration(refreshToken);
 
         // 2. convert Date → LocalDateTime
-        LocalDateTime accessExpiresAt  = accessExpDate.toInstant()
-                .atZone(ZoneId.systemDefault()).toLocalDateTime();
-        LocalDateTime refreshExpiresAt = refreshExpDate.toInstant()
-                .atZone(ZoneId.systemDefault()).toLocalDateTime();
+        LocalDateTime accessExpiresAt  = accessExpDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        LocalDateTime refreshExpiresAt = refreshExpDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
 
         // 3. calculate seconds remaining from now
         long accessExpiresInSeconds  = ChronoUnit.SECONDS.between(LocalDateTime.now(), accessExpiresAt);
@@ -90,7 +80,6 @@ public class AuthService implements AuthInterface {
 
 
     public AuthDTO login(String usernameOrEmail, String password) {
-
         // This triggers CustomUserDetailsService + BCrypt password check
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(usernameOrEmail, password));
 
