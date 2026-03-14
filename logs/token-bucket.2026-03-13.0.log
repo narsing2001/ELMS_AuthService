@@ -1,0 +1,183 @@
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 10:58:42 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 10:59:15 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 10:59:15 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 10:59:15 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:00:07 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 11:00:07 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 11:00:07 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:00:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:00:38 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:03:04 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 11:03:04 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:03:04 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 11:04:40 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 4
+2026-03-13 11:04:46 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:05:02 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:05:05 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:05:07 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:05:32 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:12:56 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:14:29 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:14:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 4
+2026-03-13 11:14:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 2
+2026-03-13 11:14:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 3
+2026-03-13 11:15:54 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 11:15:54 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:15:54 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:18:43 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:18:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:18:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 11:18:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:27:34 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:29:17 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:30:27 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:30:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 11:30:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:30:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 11:30:58 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 3
+2026-03-13 11:30:58 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 2
+2026-03-13 11:30:58 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 1
+2026-03-13 11:39:43 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 3
+2026-03-13 11:39:43 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 11:39:43 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:49:10 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:49:52 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:50:09 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 11:50:10 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 11:50:10 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 11:58:16 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 11:59:29 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/auth/refresh1 | Tokens left: 4
+2026-03-13 11:59:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 11:59:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 11:59:37 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 1
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 12:02:35 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:02:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 12:02:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 2
+2026-03-13 12:02:52 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 12:03:50 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 12:03:50 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 12:03:50 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 12:05:23 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 12:05:23 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 12:05:23 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 12:09:48 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 12:11:31 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 12:13:27 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 2
+2026-03-13 12:13:27 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 3
+2026-03-13 12:13:27 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 13:24:20 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 13:24:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 3
+2026-03-13 13:24:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 4
+2026-03-13 13:24:34 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2
+2026-03-13 13:24:41 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 1
+2026-03-13 13:24:41 WARN  c.e.e.i.RateLimitingTokenBucketInterceptor - Token-Rate limit exceeded | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data
+2026-03-13 13:24:41 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 0
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-03-13 14:27:12 INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-03-13 14:27:32 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/users-data | Tokens left: 4
+2026-03-13 14:27:32 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/auth-summary-data | Tokens left: 3
+2026-03-13 14:27:32 DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 0:0:0:0:0:0:0:1 | URL: /api/v1/reports/user-roles-data | Tokens left: 2

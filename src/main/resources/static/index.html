@@ -21,7 +21,10 @@
           --success:   #2E7D32;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after {
+          box-sizing: border-box;
+          margin: 0; padding: 0;
+          }
 
         body {
           min-height: 100vh;
@@ -56,25 +59,31 @@
           to   { transform: translate(-5%,5%) scale(1.1); }
         }
 
-        /* ══════════════════════════════════════════
-           NAVBAR
-        ══════════════════════════════════════════ */
+        /*---------NAVBAR------------*/
         .navbar {
-          position: sticky; top: 0; z-index: 100;
+          position: sticky;
+          top: 0;
+          z-index: 100;
           background: rgba(26,26,46,.85);
           backdrop-filter: blur(16px);
           border-bottom: 1px solid var(--border);
           padding: 0 32px;
-          display: flex; align-items: center; justify-content: space-between;
+          display: flex; align-items: center;
+          justify-content: space-between;
           height: 60px;
         }
         .nav-brand {
-          display: flex; align-items: center; gap: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
         }
         .nav-icon {
-          width: 34px; height: 34px; border-radius: 9px;
-          background: linear-gradient(135deg, var(--accent), #c62060);
-          display: flex; align-items: center; justify-content: center;
+          width: 34px;
+          height: 34px; border-radius: 9px;
+          background: linear-gradient(135deg,var(--accent), #c62060);
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: 16px;
           box-shadow: 0 4px 14px rgba(233,69,96,.35);
         }
@@ -85,52 +94,83 @@
           font-size: 10px; color: var(--muted);
           font-family: 'IBM Plex Mono', monospace; letter-spacing: .5px;
         }
-        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        }
         .nav-user {
-          display: flex; align-items: center; gap: 8px;
-          padding: 6px 12px; border-radius: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 12px;
+          border-radius: 20px;
           background: rgba(255,255,255,.06);
           border: 1px solid var(--border);
-          font-size: 12px; color: var(--muted);
+          font-size: 12px;
+          color: var(--muted);
         }
         .nav-user-dot {
-          width: 8px; height: 8px; border-radius: 50%;
+          width: 8px; height: 8px;
+          border-radius: 50%;
           background: #4caf50;
           box-shadow: 0 0 6px #4caf50;
           animation: pulse-dot 2s ease-in-out infinite;
         }
         @keyframes pulse-dot {
-          0%,100% { opacity: 1; } 50% { opacity: .4; }
+          0%,100% {
+           opacity: 1;
+           } 50% {
+            opacity: .4;
+             }
         }
-        .nav-user strong { color: #fff; font-size: 13px; }
+        .nav-user strong {
+         color: #fff;
+         font-size: 13px;
+         }
         .btn-logout {
-          padding: 7px 16px; border-radius: 6px;
-          background: rgba(233,69,96,.12); border: 1px solid rgba(233,69,96,.3);
-          color: #e94560; font-family: 'Archivo', sans-serif;
-          font-size: 12px; font-weight: 700; cursor: pointer;
-          transition: all .2s; letter-spacing: .3px;
+          padding: 7px 16px;
+          border-radius: 6px;
+          background: rgba(233,69,96,.12);
+          border: 1px solid rgba(233,69,96,.3);
+          color: #e94560;
+          font-family: 'Archivo', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all .2s;
+          letter-spacing: .3px;
         }
-        .btn-logout:hover { background: rgba(233,69,96,.22); border-color: #e94560; }
+        .btn-logout:hover {
+        background: rgba(233,69,96,.22);
+        border-color: #e94560;
+        }
 
-        /* ══════════════════════════════════════════
-           MAIN LAYOUT
-        ══════════════════════════════════════════ */
+        /* --------MAIN LAYOUT-----------*
         .main {
-          position: relative; z-index: 1;
-          max-width: 1100px; margin: 0 auto;
+          position: relative;
+          z-index: 1;
+          max-width: 1100px;
+          margin: 0 auto;
           padding: 40px 32px 60px;
         }
 
-        /* ── Page header ── */
+        /* ----Page header ----- */
         .page-header {
           margin-bottom: 36px;
           animation: fadeUp .5s ease both;
         }
         .page-header h1 {
-          font-size: 28px; font-weight: 900; letter-spacing: -.5px;
-          color: #fff; margin-bottom: 6px;
+          font-size: 28px;
+          font-weight: 900;
+          letter-spacing: -.5px;
+          color: #fff;
+          margin-bottom: 6px;
         }
-        .page-header p { font-size: 13px; color: var(--muted); }
+        .page-header p {
+        font-size: 13px;
+        color: var(--muted);
+        }
         .greeting-time {
           font-family: 'IBM Plex Mono', monospace;
           font-size: 11px; color: var(--accent);
@@ -149,20 +189,32 @@
           border: 1px solid var(--border);
           border-radius: 12px;
           padding: 20px 22px;
-          position: relative; overflow: hidden;
+          position: relative;
+          overflow: hidden;
           animation: fadeUp .5s ease both;
           transition: transform .2s, box-shadow .2s;
         }
-        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.3); }
+        .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0,0,0,.3);
+        }
         .stat-card::before {
           content: '';
           position: absolute; top: 0; left: 0; right: 0;
           height: 2px;
         }
-        .stat-card.pink::before  { background: linear-gradient(90deg, var(--pink), #c62060); }
-        .stat-card.blue::before  { background: linear-gradient(90deg, var(--blue), #1976D2); }
-        .stat-card.teal::before  { background: linear-gradient(90deg, var(--teal), #00897B); }
-        .stat-card.green::before { background: linear-gradient(90deg, var(--success), #43A047); }
+        .stat-card.pink::before  {
+         background: linear-gradient(90deg, var(--pink), #c62060);
+         }
+        .stat-card.blue::before  {
+        background: linear-gradient(90deg, var(--blue), #1976D2);
+        }
+        .stat-card.teal::before  {
+        background: linear-gradient(90deg, var(--teal), #00897B);
+         }
+        .stat-card.green::before {
+        background: linear-gradient(90deg, var(--success), #43A047);
+         }
 
         .stat-icon {
           font-size: 22px; margin-bottom: 12px;
@@ -174,10 +226,19 @@
           color: #fff; line-height: 1;
           margin-bottom: 4px;
         }
-        .stat-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
-        .stat-loading { opacity: .4; font-size: 18px; }
+        .stat-label {
+          font-size: 11px;
+          color: var(--muted);
+          font-weight: 600;
+          letter-spacing: .4px;
+          text-transform: uppercase;
+          }
+        .stat-loading {
+        opacity: .4;
+        font-size: 18px;
+        }
 
-        /* ── Section title ── */
+        /* -----Section title ------ */
         .section-title {
           font-size: 11px; font-weight: 700; color: var(--muted);
           letter-spacing: 1px; text-transform: uppercase;
@@ -185,7 +246,7 @@
           margin-bottom: 14px; margin-top: 32px;
         }
 
-        /* ── Report cards grid ── */
+        /* ---Report cards grid ---*/
         .reports-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -197,7 +258,8 @@
           border-radius: 12px;
           padding: 24px;
           cursor: pointer;
-          transition: transform .2s, box-shadow .2s, border-color .2s;
+          transition: transform .2s,
+          box-shadow .2s, border-color .2s;
           animation: fadeUp .5s ease both;
           position: relative; overflow: hidden;
         }
@@ -205,57 +267,109 @@
           transform: translateY(-4px);
           box-shadow: 0 16px 40px rgba(0,0,0,.35);
         }
-        .report-card.pink:hover  { border-color: rgba(173,20,87,.5); }
-        .report-card.blue:hover  { border-color: rgba(25,118,210,.5); }
-        .report-card.teal:hover  { border-color: rgba(0,137,123,.5); }
+        .report-card.pink:hover  {
+        border-color: rgba(173,20,87,.5);
+        }
+        .report-card.blue:hover  {
+        border-color: rgba(25,118,210,.5);
+         }
+        .report-card.teal:hover  {
+        border-color: rgba(0,137,123,.5);
+         }
 
         .report-card-stripe {
           position: absolute; top: 0; left: 0; right: 0; height: 3px;
           border-radius: 12px 12px 0 0;
         }
-        .pink  .report-card-stripe { background: linear-gradient(90deg,#880E4F,#AD1457); }
-        .blue  .report-card-stripe { background: linear-gradient(90deg,#1565C0,#1976D2); }
-        .teal  .report-card-stripe { background: linear-gradient(90deg,#00695C,#00897B); }
+        .pink  .report-card-stripe {
+        background: linear-gradient(90deg,#880E4F,#AD1457);
+        }
+        .blue  .report-card-stripe {
+        background: linear-gradient(90deg,#1565C0,#1976D2);
+        }
+        .teal  .report-card-stripe {
+        background: linear-gradient(90deg,#00695C,#00897B);
+        }
 
         .report-card-icon {
           font-size: 28px; margin-bottom: 14px;
           display: inline-block;
         }
-        .report-card h3 { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-        .report-card p  { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+        .report-card h3 {
+         font-size: 15px;
+         font-weight: 800;
+         color: #fff;
+          margin-bottom: 6px;
+           }
+        .report-card p  {
+        font-size: 12px; color: var(--muted);
+        line-height: 1.6; margin-bottom: 18px;
+        }
 
         .report-card-meta {
-          display: flex; align-items: center; justify-content: space-between;
-          font-size: 10px; color: var(--muted);
+          display: flex; align-items: center;
+          justify-content: space-between;
+          font-size: 10px;
+          color: var(--muted);
           font-family: 'IBM Plex Mono', monospace;
           padding-top: 14px;
           border-top: 1px solid var(--border);
         }
         .btn-open {
-          padding: 7px 16px; border-radius: 6px; border: none;
-          font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700;
-          cursor: pointer; transition: all .2s; letter-spacing: .3px;
+          padding: 7px 16px;
+          border-radius: 6px;
+          border: none;
+          font-family: 'Archivo', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all .2s;
+          letter-spacing: .3px;
         }
-        .pink  .btn-open { background: rgba(173,20,87,.2);  color: #F48FB1; border: 1px solid rgba(173,20,87,.4); }
-        .blue  .btn-open { background: rgba(25,118,210,.2); color: #90CAF9; border: 1px solid rgba(25,118,210,.4); }
-        .teal  .btn-open { background: rgba(0,137,123,.2);  color: #80CBC4; border: 1px solid rgba(0,137,123,.4); }
-        .pink  .btn-open:hover { background: rgba(173,20,87,.35); }
-        .blue  .btn-open:hover { background: rgba(25,118,210,.35); }
-        .teal  .btn-open:hover { background: rgba(0,137,123,.35); }
+        .pink  .btn-open {
+        background: rgba(173,20,87,.2);
+        color: #F48FB1;
+        border: 1px solid rgba(173,20,87,.4);
+         }
+        .blue  .btn-open {
+        background: rgba(25,118,210,.2);
+        color: #90CAF9;
+        border: 1px solid rgba(25,118,210,.4);
+        }
+        .teal  .btn-open {
+        background: rgba(0,137,123,.2);
+        color: #80CBC4;
+        border: 1px solid rgba(0,137,123,.4);
+        }
+        .pink  .btn-open:hover {
+        background: rgba(173,20,87,.35);
+        }
+        .blue  .btn-open:hover {
+        background: rgba(25,118,210,.35);
+        }
+        .teal  .btn-open:hover {
+        background: rgba(0,137,123,.35);
+        }
 
-        /* ── PDF Download buttons ── */
+        /* -------PDF Download buttons -------*/
         .btn-pdf {
-          padding: 7px 14px; border-radius: 6px; border: none;
+          padding: 7px 14px;
+          border-radius: 6px;
+          border: none;
           font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 700;
-          cursor: pointer; transition: all .2s;
-          background: rgba(255,255,255,.06); color: var(--muted);
+          cursor: pointer;
+          transition: all .2s;
+          background: rgba(255,255,255,.06);
+          color: var(--muted);
           border: 1px solid var(--border);
         }
         .btn-pdf:hover { background: rgba(255,255,255,.12); color: #fff; }
 
-        /* ── Quick actions bar ── */
+        /* --Quick actions bar --*/
         .quick-actions {
-          display: flex; gap: 12px; flex-wrap: wrap;
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
           margin-top: 32px;
           padding: 20px 24px;
           background: var(--card);
@@ -264,55 +378,110 @@
           animation: fadeUp .6s ease both;
         }
         .quick-title {
-          width: 100%; font-size: 11px; font-weight: 700;
-          color: var(--muted); letter-spacing: .8px; text-transform: uppercase;
-          font-family: 'IBM Plex Mono', monospace; margin-bottom: 4px;
+          width: 100%; font-size: 11px;
+          font-weight: 700;
+          color: var(--muted);
+          letter-spacing: .8px; text-transform: uppercase;
+          font-family: 'IBM Plex Mono', monospace;
+          margin-bottom: 4px;
         }
         .quick-btn {
-          padding: 8px 18px; border-radius: 6px;
+          padding: 8px 18px;
+          border-radius: 6px;
           background: rgba(255,255,255,.06);
           border: 1px solid var(--border);
           color: rgba(255,255,255,.7);
-          font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 600;
-          cursor: pointer; transition: all .2s; letter-spacing: .2px;
+          font-family: 'Archivo', sans-serif;
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all .2s;
+          letter-spacing: .2px;
         }
-        .quick-btn:hover { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.2); }
+        .quick-btn:hover {
+        background: rgba(255,255,255,.12);
+        color: #fff;
+        border-color: rgba(255,255,255,.2);
+        }
 
-        /* ── Toast notification ── */
+        /* ----Toast notification ----*/
         .toast {
-          position: fixed; bottom: 24px; right: 24px;
-          padding: 12px 20px; border-radius: 8px;
+          position: fixed;
+          bottom: 24px; right: 24px;
+          padding: 12px 20px;
+          border-radius: 8px;
           background: rgba(46,125,50,.15);
           border: 1px solid rgba(46,125,50,.4);
-          color: #a5d6a7; font-size: 13px; font-weight: 600;
-          display: none; align-items: center; gap: 8px;
-          z-index: 999; animation: slideIn .3s ease;
+          color: #a5d6a7;
+          font-size: 13px;
+          font-weight: 600;
+          display: none;
+          align-items: center;
+          gap: 8px;
+          z-index: 999;
+          animation: slideIn .3s ease;
           box-shadow: 0 8px 24px rgba(0,0,0,.3);
         }
-        .toast.show { display: flex; }
-        .toast.error { background: rgba(198,40,40,.15); border-color: rgba(198,40,40,.4); color: #ef9a9a; }
-        @keyframes slideIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+        .toast.show {
+        display: flex;
+        }
+        .toast.error {
+         background: rgba(198,40,40,.15);
+         border-color: rgba(198,40,40,.4);
+         color: #ef9a9a;
+          }
+        @keyframes slideIn {
+        from {
+        opacity:0;
+        transform:translateY(12px);
+         } to {
+          opacity:1;
+          transform:translateY(0);
+          }
+          }
 
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(20px); }
           to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* stagger children */
-        .stat-card:nth-child(1) { animation-delay: .05s; }
-        .stat-card:nth-child(2) { animation-delay: .10s; }
-        .stat-card:nth-child(3) { animation-delay: .15s; }
-        .stat-card:nth-child(4) { animation-delay: .20s; }
-        .report-card:nth-child(1) { animation-delay: .15s; }
-        .report-card:nth-child(2) { animation-delay: .22s; }
-        .report-card:nth-child(3) { animation-delay: .29s; }
+        /*----stagger children -------*/
+        .stat-card:nth-child(1) {
+        animation-delay: .05s;
+        }
+        .stat-card:nth-child(2) {
+         animation-delay: .10s;
+          }
+        .stat-card:nth-child(3) {
+        animation-delay: .15s;
+         }
+        .stat-card:nth-child(4) {
+        animation-delay: .20s;
+         }
+        .report-card:nth-child(1) {
+        animation-delay: .15s;
+        }
+        .report-card:nth-child(2) {
+        animation-delay: .22s;
+        }
+        .report-card:nth-child(3) {
+        animation-delay: .29s;
+        }
 
-        /* ── Responsive ── */
+        /* Responsive */
         @media (max-width: 600px) {
-          .navbar { padding: 0 16px; }
-          .main   { padding: 24px 16px 48px; }
-          .nav-subtitle { display: none; }
-          .page-header h1 { font-size: 22px; }
+          .navbar {
+          padding: 0 16px;
+          }
+          .main   {
+          padding: 24px 16px 48px;
+           }
+          .nav-subtitle {
+          display: none;
+           }
+          .page-header h1 {
+          font-size: 22px;
+          }
         }
     </style>
 </head>
@@ -414,7 +583,7 @@
                 <span>/api/v1/user_roles</span>
                 <div style="display:flex;gap:8px">
                     <button class="btn-pdf" onclick="downloadPdf(event,'user-roles')">⬇ PDF</button>
-                    <button class="btn-open">View Report →</button>
+                    <button class="btn-open" onclick="openReport()">View Report →</button>
                 </div>
             </div>
         </div>
@@ -433,7 +602,6 @@
 
 </main>
 
-<!-- Toast -->
 <div class="toast" id="toast">
     <span id="toast-icon">✓</span>
     <span id="toast-msg"></span>
@@ -530,14 +698,16 @@
 
     function openReport() {
       const token = getToken();
-      if (!token) { window.location.href = '/auth.html'; return; }
-      window.open('/Report-API.html?token=' + token, '_blank');
+      if (!token) {
+      window.location.href = '/LoginRegister.html';
+      return;
+      }
+      window.open('/report-all3.html?token=' + token, '_blank');
     }
 
 
     async function downloadPdf(event, type) {
-      event.stopPropagation(); // prevent report card click
-
+      event.stopPropagation();
       const urlMap = {
         'auth-summary': API.pdfAuth,
         'users':        API.pdfUsers,
@@ -553,8 +723,10 @@
 
       try {
         const res = await fetch(urlMap[type], { headers: authHeaders() });
-        if (!res.ok) { showToast('PDF generation failed: ' + res.status, true); return; }
-
+        if (!res.ok) {
+        showToast('PDF generation failed: ' + res.status, true);
+        return;
+        }
         const blob = await res.blob();
         const url  = URL.createObjectURL(blob);
         const a    = document.createElement('a');
@@ -563,7 +735,6 @@
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         showToast('✓ ' + nameMap[type] + ' downloaded', false);
-
       } catch (err) {
         showToast('Download failed: ' + err.message, true);
       }
@@ -601,8 +772,6 @@
         }
       } catch(e) { /* ignore malformed token */ }
     }
-
-
     setGreeting();
     loadStats();
     checkTokenExpiry();

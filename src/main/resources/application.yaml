@@ -103,18 +103,10 @@ management:
 #http://localhost:8080/actuator/metrics
 #http://localhost:8080/actuator/env
 
-# application.properties
-  spring:
-      mvc:
-         favicon:
-               enabled: false
+
   logging:
     level:
-       org:
-       springframework:
-       web:
-       servlet:
-        resource: WARN
+      org.springframework.web.servlet.resource.NoResourceFoundException: OFF
 
 server:
   port: 8080
