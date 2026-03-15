@@ -16,11 +16,19 @@ public class UserRoleDTO {
     private RoleEnum roleName;
     private String assignedBy;
 
+    // ADD these two fields
+//    private String username;
+//    private String name;
+
     public static UserRoleDTO fromEntity(UserRole userRole) {
-        return new UserRoleDTO( userRole.getId(),
-                                userRole.getUser().getId(),
-                                userRole.getRole().getRoleId(),
-                                userRole.getRole().getName(),
-                                userRole.getAssignedBy() );
+        return new UserRoleDTO(
+                userRole.getId(),
+                userRole.getUser().getId(),
+                userRole.getRole().getRoleId(),
+                userRole.getRole().getName(),
+                userRole.getAssignedBy()
+        );
     }
+
+
 }

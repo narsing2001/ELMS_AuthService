@@ -1,0 +1,766 @@
+2026-03-14 14:29:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 25ms | Status: 200
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 544ms | Status: 200
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:29:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 707ms | Status: 200
+2026-03-14 14:29:55 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:29:55 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 728ms | Status: 200
+2026-03-14 14:29:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:29:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 14:29:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 12ms | Status: 200
+2026-03-14 14:30:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:30:01 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1422ms | Status: 500
+2026-03-14 14:30:25 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:30:25 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 670ms | Status: 500
+2026-03-14 14:31:06 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:07 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 552ms | Status: 500
+2026-03-14 14:31:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 800ms | Status: 200
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 7ms | Status: 200
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:31:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 23ms | Status: 200
+2026-03-14 14:31:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:31:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 132ms | Status: 200
+2026-03-14 14:31:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:31:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 221ms | Status: 200
+2026-03-14 14:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 55ms | Status: 200
+2026-03-14 14:35:37 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:37 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:37 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:35:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 872ms | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1630ms | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 1664ms | Status: 200
+2026-03-14 14:35:39 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 25ms | Status: 200
+2026-03-14 14:35:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1457ms | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 0ms | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 20ms | Status: 200
+2026-03-14 14:35:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:35:55 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:35:55 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 126ms | Status: 200
+2026-03-14 14:35:55 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:35:55 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 123ms | Status: 200
+2026-03-14 14:42:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:00 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:43:00 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 72ms | Status: 200
+2026-03-14 14:43:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:01 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:43:01 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1046ms | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 45ms | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1620ms | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:43:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 1771ms | Status: 200
+2026-03-14 14:43:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 2863ms | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 17ms | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 129ms | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 280ms | Status: 200
+2026-03-14 14:43:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 285ms | Status: 200
+2026-03-14 14:43:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:43:48 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 14:43:48 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 23ms | Status: 200
+2026-03-14 14:44:01 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:44:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 982ms | Status: 200
+2026-03-14 14:44:02 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:44:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 18ms | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 44ms | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 190ms | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:44:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 206ms | Status: 200
+2026-03-14 14:44:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 14:44:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 10ms | Status: 200
+2026-03-14 14:44:37 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 931ms | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 8ms | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 22ms | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 175ms | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:44:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 190ms | Status: 200
+2026-03-14 14:58:50 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:58:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 14:58:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1297ms | Status: 200
+2026-03-14 14:59:55 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:59:55 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 14:59:55 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 119ms | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 121ms | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 373ms | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 14:59:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 414ms | Status: 200
+2026-03-14 15:00:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:00:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:00:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 113ms | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 24ms | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 106ms | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:00:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 93ms | Status: 200
+2026-03-14 15:00:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:00:59 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:00:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 13ms | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 14ms | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 101ms | Status: 200
+2026-03-14 15:01:00 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 101ms | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all.html | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all.html | Time: 336ms | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 118ms | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:03:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 133ms | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all1.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all1.html | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all1.html | Time: 23ms | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 6ms | Status: 429
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 29ms | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:03:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 140ms | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 9ms | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 109ms | Status: 200
+2026-03-14 15:03:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 109ms | Status: 200
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 10ms | Status: 200
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 8ms | Status: 429
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:03:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 66ms | Status: 200
+2026-03-14 15:04:39 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:04:40 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 15:04:40 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 441ms | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 8ms | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 29ms | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 87ms | Status: 200
+2026-03-14 15:04:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 106ms | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 10ms | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 19ms | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 128ms | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:06:08 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 149ms | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all1.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all1.html | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all1.html | Time: 9ms | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 6ms | Status: 429
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 153ms | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:06:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 175ms | Status: 200
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all.html | Status: 200
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all.html | Time: 4ms | Status: 200
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 6ms | Status: 429
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 5ms | Status: 429
+2026-03-14 15:06:11 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 5ms | Status: 429
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 0ms | Status: 200
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 4ms | Status: 429
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 4ms | Status: 429
+2026-03-14 15:06:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 4ms | Status: 429
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 6ms | Status: 200
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:06:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:06:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 134ms | Status: 200
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 2ms | Status: 429
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 2ms | Status: 429
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:06:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 139ms | Status: 200
+2026-03-14 15:06:34 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:06:34 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 15:06:34 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 21ms | Status: 200
+2026-03-14 15:08:11 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 969ms | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 6ms | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 133ms | Status: 200
+2026-03-14 15:08:12 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 147ms | Status: 200
+2026-03-14 15:19:54 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:19:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 63ms | Status: 200
+2026-03-14 15:19:55 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:55 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:55 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:55 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:19:55 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 398ms | Status: 200
+2026-03-14 15:19:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:19:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 729ms | Status: 200
+2026-03-14 15:19:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:19:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 947ms | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 114ms | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 7ms | Status: 429
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:19:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 134ms | Status: 200
+2026-03-14 15:20:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:20:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 15:20:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1099ms | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 8ms | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1ms | Status: 429
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 90ms | Status: 200
+2026-03-14 15:20:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 102ms | Status: 200
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 23ms | Status: 200
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:21:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 377ms | Status: 200
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 534ms | Status: 200
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:21:54 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 559ms | Status: 200
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 16ms | Status: 200
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 17ms | Status: 200
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:03 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 75ms | Status: 429
+2026-03-14 15:23:04 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:23:04 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:23:04 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1103ms | Status: 200
+2026-03-14 15:23:04 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1095ms | Status: 200
+2026-03-14 15:23:04 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:23:05 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1366ms | Status: 200
+2026-03-14 15:23:05 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:23:05 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:23:05 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 1400ms | Status: 200
+2026-03-14 15:23:05 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 1393ms | Status: 200
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report.html | Status: 200
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report.html | Time: 340ms | Status: 200
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:23:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 24ms | Status: 200
+2026-03-14 15:23:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:23:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:23:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:23:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:30 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:23:32 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:32 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:23:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1ms | Status: 429
+2026-03-14 15:23:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:23:38 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1ms | Status: 429
+2026-03-14 15:23:40 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:40 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:23:40 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 18ms | Status: 200
+2026-03-14 15:23:41 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:41 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:23:44 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1ms | Status: 429
+2026-03-14 15:23:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:23:48 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all.html | Status: 200
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all.html | Time: 107ms | Status: 200
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 24ms | Status: 200
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:24:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 87ms | Status: 200
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all1.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all1.html | Status: 200
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all1.html | Time: 8ms | Status: 200
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:24:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 19ms | Status: 200
+2026-03-14 15:24:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:24:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 107ms | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 4ms | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 8ms | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 12ms | Status: 429
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:24:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 101ms | Status: 200
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 5ms | Status: 200
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:25:09 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 69ms | Status: 200
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 0ms | Status: 200
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 2ms | Status: 429
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 2ms | Status: 429
+2026-03-14 15:25:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 0ms | Status: 200
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 12ms | Status: 200
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:25:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 76ms | Status: 200
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 30ms | Status: 200
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:27:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 244ms | Status: 200
+2026-03-14 15:27:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:27:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:27:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 581ms | Status: 200
+2026-03-14 15:27:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 526ms | Status: 200
+2026-03-14 15:28:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:28:45 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all.html | Status: 200
+2026-03-14 15:28:45 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all.html | Time: 16ms | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 303ms | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 530ms | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:28:46 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 498ms | Status: 200
+2026-03-14 15:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 48ms | Status: 200
+2026-03-14 15:29:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:29:31 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:29:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 65ms | Status: 200
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report.html | Status: 200
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report.html | Time: 6ms | Status: 200
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:29:51 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 18ms | Status: 200
+2026-03-14 15:30:02 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:30:02 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:30:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 80ms | Status: 200
+2026-03-14 15:30:04 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:30:04 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:30:04 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 70ms | Status: 200
+2026-03-14 15:30:06 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:30:06 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:30:06 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 15ms | Status: 200
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 224ms | Status: 200
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 304ms | Status: 200
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 562ms | Status: 200
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:35:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 613ms | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 116ms | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 6ms | Status: 429
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 159ms | Status: 200
+2026-03-14 15:35:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 160ms | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 7ms | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 40ms | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 113ms | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:36:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 120ms | Status: 200
+2026-03-14 15:36:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:43 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 15:36:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1053ms | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 6ms | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 8ms | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:36:45 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 101ms | Status: 200
+2026-03-14 15:36:46 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 109ms | Status: 200
+2026-03-14 15:49:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report.html | Status: 200
+2026-03-14 15:49:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report.html | Time: 192ms | Status: 200
+2026-03-14 15:49:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:49:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 307ms | Status: 200
+2026-03-14 15:49:22 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:22 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:49:22 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 205ms | Status: 200
+2026-03-14 15:49:23 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:23 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:49:23 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 143ms | Status: 200
+2026-03-14 15:49:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:24 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:49:24 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 20ms | Status: 200
+2026-03-14 15:49:28 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:49:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 66ms | Status: 200
+2026-03-14 15:49:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 6ms | Status: 429
+2026-03-14 15:49:30 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:30 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 2ms | Status: 429
+2026-03-14 15:49:31 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:49:31 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:31 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1ms | Status: 429
+2026-03-14 15:49:33 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:33 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:49:33 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 48ms | Status: 200
+2026-03-14 15:49:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:49:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all.html | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all.html | Time: 22ms | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 131ms | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 323ms | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:50:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 338ms | Status: 200
+2026-03-14 15:50:33 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:33 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:50:33 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 88ms | Status: 200
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all1.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all1.html | Status: 200
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all1.html | Time: 13ms | Status: 200
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 6ms | Status: 429
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:50:48 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 17ms | Status: 200
+2026-03-14 15:50:49 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:50:49 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 73ms | Status: 200
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all1.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all1.html | Status: 200
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all1.html | Time: 8ms | Status: 200
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:50:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 2ms | Status: 429
+2026-03-14 15:51:00 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:51:00 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 108ms | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 110ms | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 26ms | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:51:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 97ms | Status: 200
+2026-03-14 15:51:21 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:21 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:51:21 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 11ms | Status: 200
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 7ms | Status: 429
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:22 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 1ms | Status: 429
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all2.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all2.html | Status: 200
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all2.html | Time: 0ms | Status: 200
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 0ms | Status: 429
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:51:29 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 76ms | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 109ms | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 31ms | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 124ms | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:52:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 143ms | Status: 200
+2026-03-14 15:54:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:54:18 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report.html | Time: 233ms | Status: 500
+2026-03-14 15:55:26 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:26 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 15:55:26 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 110ms | Status: 200
+2026-03-14 15:55:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 807ms | Status: 200
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 968ms | Status: 200
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:55:28 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 942ms | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 8ms | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 6ms | Status: 429
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 26ms | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:55:32 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 141ms | Status: 200
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 4ms | Status: 200
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 2ms | Status: 429
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 1ms | Status: 429
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-03-14 15:55:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 95ms | Status: 200
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 11ms | Status: 200
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 0ms | Status: 429
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 0ms | Status: 429
+2026-03-14 15:55:58 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 15:55:59 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 23ms | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 357ms | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 13ms | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 18:28:56 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 206ms | Status: 200
+2026-03-14 18:28:57 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 301ms | Status: 500
+2026-03-14 18:28:57 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 316ms | Status: 500
+2026-03-14 18:29:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 3025ms | Status: 200
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 6ms | Status: 200
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 136ms | Status: 500
+2026-03-14 18:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 257ms | Status: 500
+2026-03-14 18:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-03-14 18:29:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 417ms | Status: 200
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 13ms | Status: 200
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 30ms | Status: 500
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 92ms | Status: 429
+2026-03-14 18:29:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 175ms | Status: 500

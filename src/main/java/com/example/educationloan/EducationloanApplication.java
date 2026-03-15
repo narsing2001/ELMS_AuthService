@@ -1,8 +1,10 @@
 package com.example.educationloan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-@SpringBootApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+@SpringBootApplication
+@EnableDiscoveryClient
 public class EducationloanApplication {
     public static void main(String[] args) {
         SpringApplication.run(EducationloanApplication.class, args);

@@ -67,7 +67,7 @@ public class User {
 
     @Builder.Default
     @JsonManagedReference
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<UserRole> userRoles = new HashSet<>();
 
     public void addRole(Role role, String assignedBy) {

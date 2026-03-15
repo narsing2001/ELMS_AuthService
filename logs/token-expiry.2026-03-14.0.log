@@ -1,0 +1,6 @@
+2026-03-14 14:29:54 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT expired at 2026-03-13T09:13:27Z. Current time: 2026-03-14T08:59:54Z, a difference of 85587315 milliseconds.  Allowed clock skew: 0 milliseconds.
+2026-03-14 14:29:54 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT expired at 2026-03-13T09:13:27Z. Current time: 2026-03-14T08:59:54Z, a difference of 85587315 milliseconds.  Allowed clock skew: 0 milliseconds.
+2026-03-14 14:29:54 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT expired at 2026-03-13T09:13:27Z. Current time: 2026-03-14T08:59:54Z, a difference of 85587315 milliseconds.  Allowed clock skew: 0 milliseconds.
+2026-03-14 18:28:56 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT strings must contain exactly 2 period characters. Found: 0
+2026-03-14 18:28:56 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT strings must contain exactly 2 period characters. Found: 0
+2026-03-14 18:28:56 ERROR c.e.e.i.TokenExpiryInterceptor - Token expiry check failed: JWT strings must contain exactly 2 period characters. Found: 0

@@ -1,5 +1,6 @@
 package com.example.educationloan.repository;
 
+import com.example.educationloan.dto.UserRoleDTO;
 import com.example.educationloan.entity.User;
 import com.example.educationloan.entity.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -25,9 +26,15 @@ public interface UserRoleRepository extends JpaRepository<UserRole, Long> {
 
     List<UserRole> findByUserId(Long userId);
 
-    //Explicit JPQL query to find according to userid and roleid----------------------------------------
+    //Explicit JPQL query to find according to userid and role-id----------------------------------------
     @Query("SELECT ur FROM UserRole ur WHERE ur.user.id = :userId AND ur.role.id = :roleId")
     Optional<UserRole> findByUserIdAndRoleId(@Param("userId") Long userId, @Param("roleId") Long roleId);
+
+
+
+    @Query("SELECT new com.example.educationloan.dto.UserRoleDTO(u.id, u.id, r.roleId, r.name, ur.assignedBy) " +
+            "FROM User u JOIN u.userRoles ur JOIN ur.role r")
+    List<UserRoleDTO> findUserRolesData();
 
 
 

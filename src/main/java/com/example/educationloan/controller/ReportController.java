@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -53,6 +54,7 @@ public class ReportController {
 
     // ── 2. User-Roles ────────────────────────────────────────────────────────
     @GetMapping("/user-roles")
+    @Transactional(readOnly = true)
     public ResponseEntity<byte[]> downloadUserRolesReport(
             @RequestParam(defaultValue = "System") String generatedBy,
             @RequestParam(defaultValue = "ALL")    String roleFilter) {
@@ -86,6 +88,7 @@ public class ReportController {
             return ResponseEntity.internalServerError().build();
         }
     }
+
 
 
     @GetMapping("/auth-summary")
@@ -134,6 +137,7 @@ public class ReportController {
     }
 
     @GetMapping("/user-roles-data")
+    @Transactional(readOnly = true)
     public ResponseEntity<List<UserRoleReportRow>> getUserRolesData(
             @RequestParam(defaultValue = "ALL") String roleFilter) {
 

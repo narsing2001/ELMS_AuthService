@@ -1,11 +1,17 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
 spring:
   application:
     name: educationloan
 
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: root
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
@@ -16,48 +22,36 @@ spring:
       auto-commit: true
 
   jpa:
-    open-in-view: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: false
-        use_sql_comments: true
+      ddl-auto: validate
+    show-sql: false
 
-logging:
-  config: classpath:logback-spring.xml
-  file:
-    name: logs/educationloan.log
-    max-size: 10MB
-    max-history: 30
-  level:
-    root: INFO
-    com.example.educationloan: DEBUG
-    com.example.educationloan.interceptor: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql: TRACE
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
 
 app:
   jwt:
-    secret: ${JWT_SECRET:bXlTdXBlclNlY3JldEtleVRoYXRJc0F0TGVhc3Q2NENoYXJhY3RlcnNMb25nRm9yU2VjdXJpdHk=}
+    secret: ${JWT_SECRET:vr09Wp+3kKf7DbyPA8a9vjO4H0JJvjnmY7tuHDeJKXk=}
     access-token-expiration-ms: 9000000
     refresh-token-expiration-ms: 604800000
   interceptor:
-    #Request Logging
     request-logging:
       enabled: true
       slow-request-threshold-ms: 2000
-
-    #Rate Limiting
     rate-limiting:
-    #Token Bucket (existing)
       token-bucket:
         enabled: true
         bucket-capacity: 5
@@ -65,13 +59,6 @@ app:
         refill-duration-minutes: 1
         login-bucket-capacity: 2
         register-bucket-capacity: 3
-    #Fixed Window (used by your interceptor)
-#      fixed-window:
-#        enabled: false
-#        max-requests: 5
-#        time-window-ms: 60000
-
-    #Token Expiry
     token-expiry:
       enabled: true
       warning-before-expiry-ms: 120000
@@ -79,8 +66,6 @@ app:
         - /api/v1/auth/login
         - /api/v1/auth/register
         - /api/v1/auth/refresh
-
-    #Audit Logging
     audit-logging:
       enabled: true
       log-anonymous: true
@@ -89,27 +74,24 @@ app:
         - /actuator/info
         - /favicon.ico
 
-
 management:
   endpoints:
     web:
       exposure:
-        include: health, info, metrics, env, beans
+        include: health, info
   endpoint:
     health:
-      show-details: always
-#http://localhost:8080/actuator/health
-#http://localhost:8080/actuator/info
-#http://localhost:8080/actuator/metrics
-#http://localhost:8080/actuator/env
+      show-details: never
+
+logging:
+#  config: classpath:logback-spring.xml
+  file:
+    name: logs/educationloan.log
+    max-size: 10MB
+    max-history: 30
+  level:
+    root: WARN
+    com.example.educationloan: INFO
+    org.springframework.web.servlet.resource: OFF
 
 
-  logging:
-    level:
-      org.springframework.web.servlet.resource.NoResourceFoundException: OFF
-
-server:
-  port: 8080
-  error:
-    include-message: always
-    include-binding-errors: always
